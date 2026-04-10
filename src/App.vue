@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import AppHeader from './components/layout/AppHeader.vue'
-import AppFooter from './components/layout/AppFooter.vue'
+// import AppFooter from './components/layout/AppFooter.vue'
 import HomeStage from './components/home/HomeStage.vue'
 import TestStage from './components/test/TestStage.vue'
 import ResultStage from './components/test/ResultStage.vue'
@@ -42,7 +42,7 @@ const onRestart = () => {
       <ResultStage v-else @restart="onRestart" />
     </main>
 
-    <AppFooter />
+    <!-- <AppFooter /> -->
   </div>
 </template>
 
