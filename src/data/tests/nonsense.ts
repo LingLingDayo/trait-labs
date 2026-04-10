@@ -386,7 +386,8 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['不可破解', '浑然天成的幽默'],
       growthTips: ['记得定期重启清内存', '别试图解释自己，越描越黑'],
-      matchRules: { X: 76 }
+      matchRules: { X: 58 },
+      rarityLabel: '🪲 精神乱码！你这报错信息建议直接提交Github'
     },
     {
       id: 'walkingprose',
@@ -416,7 +417,8 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['超然物外', '摆烂无愧', '绝不内耗'],
       growthTips: ['今天随便动一下就算数', '如果太难就……好吧你继续睡吧'],
-      matchRules: { W: 87 }
+      matchRules: { W: 87 },
+      rarityLabel: '💤 宇宙级废柴！你这种躺平的决心连黑洞都拉不起来'
     },
     {
       id: 'logicblackhole',
@@ -431,7 +433,8 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['打开新维度', '无法被预测', '瓦解一切规则'],
       growthTips: ['偶尔给别人一个他们能接住的答案', '把你的逻辑写下来，说不定是传世著作'],
-      matchRules: { X: 58, W: 67 }
+      matchRules: { X: 58, W: 67 },
+      rarityLabel: '🕳️ 逻辑黑洞！和你聊天的人平均降智50%'
     },
     {
       id: 'schrodingeremployee',
@@ -461,7 +464,8 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['情绪极其稳定', '低碳环保'],
       growthTips: ['记得挪动一下脖子', '多喝水，多晒真实的太阳'],
-      matchRules: { W: 67, Q: 42 }
+      matchRules: { W: 67, Q: 42 },
+      rarityLabel: '🪴 赛博盆栽！只要有WiFi你就能活到地老天荒'
     },
     {
       id: 'cosmicweirdo',

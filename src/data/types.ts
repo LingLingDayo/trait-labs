@@ -47,6 +47,8 @@ export interface PersonalityResult {
   growthTips: string[]
   /** 匹配规则: 各维度得分超过阈值时命中该结论 */
   matchRules: Record<string, number>
+  /** 自定义稀有度标签 (可选) */
+  rarityLabel?: string
 }
 
 /** 完整测试套件 */

@@ -22,6 +22,27 @@ const rarityPercentage = computed(() => {
   return (0.5 + (hash % 40) / 10).toFixed(1)
 })
 
+// 动态稀有度文案
+const displayRarityLabel = computed(() => {
+  if (result.value?.rarityLabel) return result.value.rarityLabel
+  
+  const p = parseFloat(rarityPercentage.value)
+  const idHash = result.value?.id ? result.value.id.length : 0
+  
+  const slogans = [
+    { t: 1.0, s: ['✨ 传说级存在', '🌌 万中无一', '💎 申遗级别稀有', '👑 绝世孤品', '🛸 外星人竟是你'] },
+    { t: 1.8, s: ['✨ 极度稀有', '🌟 千里挑一', '🧬 基因突变级罕见', '🔍 这种人格很难找', '🎭 独特的灵魂'] },
+    { t: 3.0, s: ['✨ 相当罕见', '🌈 百里挑一', '📈 稀有品种', '🧩 独特样本', '🎋 罕见的人格特质'] },
+    { t: 5.0, s: ['✨ 挺特殊的', '🎯 少数派', '🍃 别具一格', '✨ 闪光点', '🌊 独特的分支'] }
+  ]
+  
+  const pool = slogans.find(s => p <= s.t)?.s || slogans[slogans.length - 1].s
+  // 使用 hash 保证同一个结果文案固定
+  const label = pool[idHash % pool.length]
+  
+  return `${label}！全球仅有 ${rarityPercentage.value}% 的人是${result.value?.title}`
+})
+
 // 获取图片路径
 const getImageUrl = (name?: string) => {
   if (!name || !store.activeTestId) return null
@@ -82,7 +103,7 @@ const onRestart = () => {
             color: result.color 
           }"
         >
-          ✨ 极度稀有！全球仅有 {{ rarityPercentage }}% 的人是{{ result.title }}
+          {{ displayRarityLabel }}
         </div>
       </div>
     </div>

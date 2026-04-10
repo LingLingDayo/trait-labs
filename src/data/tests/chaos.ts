@@ -511,7 +511,8 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['自带稳定光环', '掌控全场', '说话有分量', '凝聚力MAX'],
       growthTips: ['也要让别人妈妈你一下', '偶尔放飞一下自我', '减少包揽'],
-      matchRules: { S: 39, E: 0, C: 36 }
+      matchRules: { S: 39, E: 0, C: 36 },
+      rarityLabel: '🍼 圣母降临！这种操碎心的体质真的建议申遗'
     },
     // ── 整顿极高 + 社牛中 + 内耗几乎为零 ──
     {
@@ -527,7 +528,8 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['执行力无上限', '责任感爆表', '不会在上班时间情绪化'],
       growthTips: ['下班做一件跟工作无关的事', '记住你不只是工具', '今晚早点睡'],
-      matchRules: { S: 31, E: 0, C: 52 }
+      matchRules: { S: 31, E: 0, C: 45 },
+      rarityLabel: '⚙️ 顶级牛马！你已经是超越碳基生命的钢铁机器了'
     },
     // ── 社牛高 + 内耗低 + 整顿低 ──
     {
@@ -543,7 +545,8 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['随遇而安', '社交天赋', '制造欢笑', '佛系快乐'],
       growthTips: ['存一点钱', '想想三天后', '别只图热闹'],
-      matchRules: { S: 43, E: 0, C: 0 }
+      matchRules: { S: 43, E: 0, C: 0 },
+      rarityLabel: '🗑️ 野生废物！这种纯粹的快乐真是令人嫉妒'
     },
     // ── 社牛高 + 内耗高 ──
     {
@@ -799,7 +802,8 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['独处大师', '高度清醒', '不消耗别人', '极简生活哲学'],
       growthTips: ['偶尔出现一下', '说一句话都算', '证明你还在人间'],
-      matchRules: { S: 0, E: 0, C: 0 }
+      matchRules: { S: 0, E: 0, C: 0 },
+      rarityLabel: '🌬️ 幽灵模式！你已经脱离了这颗星球的引力'
     },
     // ── 社牛低 + 内耗中 + 整顿低 ──
     {
@@ -911,7 +915,8 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['顶级多巴胺收割', '享乐天才', '活在当下', '人格魅力黑洞'],
       growthTips: ['想想别人的感受（可选）', '稍微收敛一点点（为了可持续发展）', '继续保持你的艺术感'],
-      matchRules: { S: 47, E: 9, C: 8 }
+      matchRules: { S: 47, E: 9, C: 8 },
+      rarityLabel: '🌊 海纳百川！你的鱼塘里居然能跑航空母舰'
     },
     // ── 默认兜底 ──
     {
