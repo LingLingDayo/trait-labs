@@ -24,7 +24,7 @@ const rarityPercentage = computed(() => {
 
 // 动态稀有度文案
 const displayRarityLabel = computed(() => {
-  if (result.value?.rarityLabel) return result.value.rarityLabel
+  if (result.value?.rarityLabel) return `${result.value.rarityLabel}\n全球仅有 ${rarityPercentage.value}% 的人是${result.value?.title}`
   
   const p = parseFloat(rarityPercentage.value)
   const idHash = result.value?.id ? result.value.id.length : 0
@@ -96,7 +96,7 @@ const onRestart = () => {
         
         <!-- 稀有度标签 -->
         <div 
-          class="inline-block mt-3 px-3 py-1 rounded-full text-xs font-bold border"
+          class="inline-block mt-3 px-3 py-1 rounded-full text-xs font-bold border whitespace-pre-line"
           :style="{ 
             backgroundColor: result.color + '10',
             borderColor: result.color + '30',
