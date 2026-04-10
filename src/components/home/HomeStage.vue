@@ -54,7 +54,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
         :class="typeThemes[activeTestType.id] || 'bg-white'"
       >
         <img 
-          src="../../assets/images/hero.png" 
+          src="../../assets/images/hero.jpg" 
           alt="Mysterious Minimalist Tree" 
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
         />
