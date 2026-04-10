@@ -110,9 +110,12 @@ export function analyzeTestResult(
     // 处理每一条匹配规则，比如 { O: 18, C: 14 }
     for (const [dimKey, reqScore] of Object.entries(result.matchRules)) {
       const userScore = dimensionScores[dimKey] || 0
+      const maxScore = maxScores[dimKey] || 1
       
-      // 单要求契合度: 截断到 1 (100%)
-      const fit = reqScore > 0 ? Math.min(userScore / reqScore, 1) : 1
+      // 使用绝对差值计算距离，距离越小契合度越高
+      const distance = Math.abs(userScore - reqScore)
+      const fit = Math.max(0, 1 - (distance / maxScore))
+      
       totalFit += fit
       ruleCount++
     }
