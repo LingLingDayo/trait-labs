@@ -59,92 +59,107 @@ const onBackHome = () => {
       </div>
     </div>
 
-    <!-- 中间题目内容区：flex-1 并允许内部滚动以防长文本，居中展示 -->
-    <div 
-      v-if="!store.isFinished && store.currentQuestion" 
-      class="flex-1 flex flex-col justify-center px-6 overflow-y-auto"
-    >
-      <div class="py-4">
-        <h2 class="text-2xl font-bold text-slate-800 leading-tight">
-          {{ store.currentQuestion.text }}
-        </h2>
-      </div>
-    </div>
-
-    <!-- 底部选项及导航区：单纯的白色背景，无抽屉效果 -->
-    <div 
-      v-if="!store.isFinished && store.currentQuestion" 
-      class="w-full bg-transparent px-6 pt-4 pb-6 space-y-4"
-    >
-      <!-- 选项列表 -->
-      <div class="space-y-3">
-        <Card 
-          v-for="option in store.currentQuestion.options" 
-          :key="option.id"
-          hoverable 
-          padding="p-4" 
-          class="border-2 transition-all duration-300"
-          :class="[
-            selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id
-              ? 'border-primary-500 bg-primary-50/50' 
-              : 'border-slate-100 bg-white'
-          ]"
-          @click="onOptionSelect(option.id)"
-        >
-          <div class="flex items-center gap-3">
-            <div 
-              class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300"
-              :class="[
-                selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id
-                  ? 'border-primary-500 bg-primary-500 scale-110'
-                  : 'border-slate-200 bg-white'
-              ]"
-            >
-              <Transition name="pop">
-                <div v-if="selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id" class="w-1.5 h-1.5 rounded-full bg-white"></div>
-              </Transition>
-            </div>
-            <span 
-              class="font-medium transition-colors duration-300"
-              :class="selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id ? 'text-primary-800' : 'text-slate-700'"
-            >
-              {{ option.label }}
-            </span>
+    <!-- 题目切换容器 -->
+    <Transition name="slide-fade" mode="out-in">
+      <div 
+        v-if="!store.isFinished && store.currentQuestion" 
+        :key="store.currentIndex"
+        class="flex-1 flex flex-col overflow-hidden"
+      >
+        <!-- 中间题目内容区：flex-1 并允许内部滚动以防长文本，居中展示 -->
+        <div class="flex-1 flex flex-col justify-center px-6 overflow-y-auto">
+          <div class="py-4">
+            <h2 class="text-2xl font-bold text-slate-800 leading-tight">
+              {{ store.currentQuestion.text }}
+            </h2>
           </div>
-        </Card>
-      </div>
-
-      <!-- 底部导航切换功能 -->
-      <div class="flex items-center justify-between gap-4">
-        <button 
-          class="flex-1 py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30 disabled:grayscale"
-          :class="store.currentIndex > 0 ? 'bg-slate-100 text-slate-600' : 'text-transparent bg-transparent pointer-events-none'"
-          :disabled="store.currentIndex <= 0"
-          @click="store.prevQuestion()"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-          <span class="font-bold text-sm">上一题</span>
-        </button>
-
-        <div class="text-slate-300 text-xs font-medium px-2">
-          {{ store.currentIndex + 1 }} / {{ store.totalQuestions }}
         </div>
 
-        <button 
-          class="flex-1 py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30"
-          :class="store.answers[store.currentQuestion.id] ? 'bg-primary-100 text-primary-600' : 'bg-slate-100 text-slate-300'"
-          :disabled="!store.answers[store.currentQuestion.id] || store.currentIndex >= store.totalQuestions - 1"
-          @click="store.nextQuestion()"
-        >
-          <span class="font-bold text-sm">下一题</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
+        <!-- 底部选项及导航区：单纯的白色背景，无抽屉效果 -->
+        <div class="w-full bg-transparent px-6 pt-4 pb-6 space-y-4">
+          <!-- 选项列表 -->
+          <div class="space-y-3">
+            <Card 
+              v-for="option in store.currentQuestion.options" 
+              :key="option.id"
+              hoverable 
+              padding="p-4" 
+              class="border-2 transition-all duration-300"
+              :class="[
+                selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id
+                  ? 'border-primary-500 bg-primary-50/50' 
+                  : 'border-slate-100 bg-white'
+              ]"
+              @click="onOptionSelect(option.id)"
+            >
+              <div class="flex items-center gap-3">
+                <div 
+                  class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300"
+                  :class="[
+                    selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id
+                      ? 'border-primary-500 bg-primary-500 scale-110'
+                      : 'border-slate-200 bg-white'
+                  ]"
+                >
+                  <Transition name="pop">
+                    <div v-if="selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id" class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                  </Transition>
+                </div>
+                <span 
+                  class="font-medium transition-colors duration-300"
+                  :class="selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id ? 'text-primary-800' : 'text-slate-700'"
+                >
+                  {{ option.label }}
+                </span>
+              </div>
+            </Card>
+          </div>
+
+          <!-- 底部导航切换功能 -->
+          <div class="flex items-center justify-between gap-4">
+            <button 
+              class="flex-1 py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30 disabled:grayscale"
+              :class="store.currentIndex > 0 ? 'bg-slate-100 text-slate-600' : 'text-transparent bg-transparent pointer-events-none'"
+              :disabled="store.currentIndex <= 0"
+              @click="store.prevQuestion()"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              <span class="font-bold text-sm">上一题</span>
+            </button>
+
+            <div class="text-slate-300 text-xs font-medium px-2">
+              {{ store.currentIndex + 1 }} / {{ store.totalQuestions }}
+            </div>
+
+            <button 
+              class="flex-1 py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30"
+              :class="store.answers[store.currentQuestion.id] ? 'bg-primary-100 text-primary-600' : 'bg-slate-100 text-slate-300'"
+              :disabled="!store.answers[store.currentQuestion.id] || store.currentIndex >= store.totalQuestions - 1"
+              @click="store.nextQuestion()"
+            >
+              <span class="font-bold text-sm">下一题</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </Transition>
   </div>
 </template>
 
 <style scoped>
+/* 题目切换动画 */
+.slide-fade-enter-active {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(0.5, 0, 0.75, 0);
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+}
+
 .pop-enter-active {
   animation: pop-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
