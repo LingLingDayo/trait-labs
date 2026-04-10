@@ -121,7 +121,7 @@ export function analyzeTestResult(
     }
 
     // 求该人格整体匹配度的加权平均
-    const matchRate = ruleCount > 0 ? totalFit / ruleCount : 0
+    const matchRate = ruleCount > 0 ? totalFit / ruleCount : 0.01
 
     return { result, matchRate }
   })
