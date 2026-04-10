@@ -5,6 +5,7 @@ import { TEST_REGISTRY } from '../../data'
 const emit = defineEmits(['show-result'])
 const isVisible = ref(true)
 const isOpen = ref(false)
+const expandedSuites = ref<Record<string, boolean>>({})
 let pressTimer: number | null = null
 
 const onTouchStart = () => {
@@ -36,8 +37,20 @@ const showResult = (testId: string, result: any) => {
   <div v-if="isVisible" class="fixed bottom-4 right-4 z-[9999] flex flex-col items-end">
     <div v-if="isOpen" class="mb-2 bg-white rounded-xl shadow-2xl border border-slate-200 p-4 max-h-[60vh] overflow-y-auto w-64 text-sm safe-area-bottom">
       <div v-for="suite in TEST_REGISTRY" :key="suite.id" class="mb-4 last:mb-0">
-        <div class="font-bold text-slate-800 mb-2">{{ suite.name }}</div>
-        <div class="flex flex-col gap-1 pl-2 border-l-2 border-slate-100">
+        <div 
+          class="font-bold text-slate-800 mb-2 flex justify-between items-center cursor-pointer select-none"
+          @click.stop="expandedSuites[suite.id] = !expandedSuites[suite.id]"
+        >
+          <span>{{ suite.name }}</span>
+          <svg 
+            class="w-4 h-4 text-slate-400 transition-transform" 
+            :class="{ 'rotate-180': expandedSuites[suite.id] }" 
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <div v-show="expandedSuites[suite.id]" class="flex flex-col gap-1 pl-2 border-l-2 border-slate-100">
           <button
             v-for="res in suite.results"
             :key="res.id"
