@@ -51,7 +51,7 @@ const onRestart = () => {
     <div class="text-center space-y-4" v-if="result">
       <!-- 图片容器 -->
       <div 
-        class="w-32 h-32 mx-auto flex items-center justify-center rounded-[40px] overflow-hidden shadow-premium bg-white group"
+        class="w-40 h-40 mx-auto flex items-center justify-center rounded-[48px] overflow-hidden shadow-premium bg-white group"
         :style="{ border: `4px solid ${result.color}15` }"
       >
         <img 
@@ -62,7 +62,7 @@ const onRestart = () => {
         />
         <div 
           v-else
-          class="text-6xl w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+          class="text-7xl w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
           :style="{ backgroundColor: result.color + '10', color: result.color }"
         >
           {{ result.emoji }}
