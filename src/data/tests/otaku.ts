@@ -6,6 +6,7 @@ export const otakuTest: TestSuite = {
   tagline: '你的DNA里刻着多少<br /><span class="text-primary-500">动漫梗？</span>',
   description: '跨越30年的ACG硬核大考验，三十道题直击灵魂，鉴定你的二次元纯度。',
   estimatedMinutes: 5,
+  randomizeOptions: true,
   dimensions: [
     {
       key: 'OLD',

@@ -69,6 +69,8 @@ export interface TestSuite {
   questions: Question[]
   /** 结论列表 */
   results: PersonalityResult[]
+  /** 选项是否随机展示 (可选) */
+  randomizeOptions?: boolean
 }
 
 /** 维度元信息 */

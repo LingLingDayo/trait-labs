@@ -14,6 +14,7 @@ export const nonsenseTest: TestSuite = {
   tagline: '探索你的<br /><span class="text-primary-500">隐藏频率</span>',
   description: '这是一场没有逻辑的灵魂漂流。题目很怪，选项很离谱，结论很随缘。',
   estimatedMinutes: 5,
+  randomizeOptions: true,
 
   dimensions: [
     {
