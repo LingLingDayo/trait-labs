@@ -5,11 +5,14 @@ import AppHeader from './components/layout/AppHeader.vue'
 import HomeStage from './components/home/HomeStage.vue'
 import TestStage from './components/test/TestStage.vue'
 import ResultStage from './components/test/ResultStage.vue'
+import DevTools from './components/dev/DevTools.vue'
+import type { PersonalityResult } from './data/types'
 import { useTestStore } from './stores/testStore'
 
 const isStarted = ref(false)
 const isCompleted = ref(false)
 const store = useTestStore()
+const isDev = import.meta.env.DEV
 
 const startTest = (testId: string) => {
   store.startTest(testId)
@@ -25,6 +28,12 @@ const onTestComplete = () => {
 const onRestart = () => {
   isStarted.value = false
   isCompleted.value = false
+}
+
+const onShowResult = (testId: string, result: PersonalityResult) => {
+  store.setDebugResult(testId, result)
+  isStarted.value = true
+  isCompleted.value = true
 }
 </script>
 
@@ -42,7 +51,7 @@ const onRestart = () => {
       <ResultStage v-else @restart="onRestart" />
     </main>
 
-    <!-- <AppFooter /> -->
+    <DevTools v-if="isDev" @show-result="onShowResult" />
   </div>
 </template>
 

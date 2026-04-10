@@ -2,12 +2,13 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { getTestById } from '../data'
 import { analyzeTestResult, type TestAnalysis } from '../utils/calculator'
-import type { Question, TestSuite } from '../data/types'
+import type { Question, TestSuite, PersonalityResult } from '../data/types'
 
 export const useTestStore = defineStore('testStore', () => {
   const activeTestId = ref<string | null>(null)
   const answers = ref<Record<string, string>>({})
   const currentIndex = ref<number>(0)
+  const debugResultOverride = ref<TestAnalysis | null>(null)
   
   // Getter: current active test suite
   const testSuite = computed<TestSuite | null>(() => {
@@ -40,6 +41,7 @@ export const useTestStore = defineStore('testStore', () => {
 
   // Getter: computed result when finished
   const computedResult = computed<TestAnalysis | null>(() => {
+    if (debugResultOverride.value) return debugResultOverride.value
     if (!isFinished.value || !testSuite.value) return null
     return analyzeTestResult(answers.value, testSuite.value)
   })
@@ -79,6 +81,23 @@ export const useTestStore = defineStore('testStore', () => {
     activeTestId.value = null
     answers.value = {}
     currentIndex.value = 0
+    debugResultOverride.value = null
+  }
+
+  function setDebugResult(testId: string, result: PersonalityResult) {
+    activeTestId.value = testId
+    const test = getTestById(testId)
+    const fakeRadarData = test?.dimensions.map(d => ({
+      dimension: d.key,
+      label: d.label,
+      score: Math.random() * 100,
+      maxScore: 100
+    })) || []
+    
+    debugResultOverride.value = {
+      primaryResult: result,
+      radarData: fakeRadarData
+    }
   }
 
   return {
@@ -97,6 +116,7 @@ export const useTestStore = defineStore('testStore', () => {
     answer,
     prevQuestion,
     nextQuestion,
-    reset
+    reset,
+    setDebugResult
   }
 })
