@@ -38,7 +38,7 @@ const onRestart = () => {
 
     <main class="flex-1 w-full flex flex-col overflow-hidden">
       <HomeStage v-if="!isStarted" @start="startTest" />
-      <TestStage v-else-if="!isCompleted" @complete="onTestComplete" />
+      <TestStage v-else-if="!isCompleted" @complete="onTestComplete" @restart="onRestart" />
       <ResultStage v-else @restart="onRestart" />
     </main>
 

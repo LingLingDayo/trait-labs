@@ -4,7 +4,7 @@ import Card from '../common/Card.vue'
 import ProgressBar from './ProgressBar.vue'
 import { useTestStore } from '../../stores/testStore'
 
-const emit = defineEmits(['complete'])
+const emit = defineEmits(['complete', 'restart'])
 const store = useTestStore()
 
 // 用于本地视觉反馈的选中 ID
@@ -34,14 +34,29 @@ const onOptionSelect = (optionId: string) => {
     isTransitioning.value = false
   }, 400) // 延迟 400ms 喵
 }
+
+const onBackHome = () => {
+  if (window.confirm('返回首页将清空当前答题进度，确定要返回吗？')) {
+    store.reset()
+    emit('restart')
+  }
+}
 </script>
 
 <template>
   <!-- 外层容器设为 100dvh 并锁定 hidden，禁止全局滚动 喵~ -->
   <div class="fixed inset-0 flex flex-col bg-slate-50 max-w-[480px] mx-auto overflow-hidden animate-slide-up">
-    <!-- 顶部进度条区 -->
-    <div class="px-6 pt-6 pb-2">
-      <ProgressBar :progress="store.progress * 100" show-label />
+    <!-- 顶部栏：返回按钮和进度条 -->
+    <div class="px-6 pt-6 pb-2 flex items-center gap-4">
+      <button 
+        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-white border-2 border-slate-100 text-slate-500 shadow-sm transition-all active:scale-95" 
+        @click="onBackHome"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="flex-1">
+        <ProgressBar :progress="store.progress * 100" show-label />
+      </div>
     </div>
 
     <!-- 中间题目内容区：flex-1 并允许内部滚动以防长文本，居中展示 -->
