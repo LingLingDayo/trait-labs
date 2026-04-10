@@ -18,9 +18,9 @@ const activeTestType = ref(testTypes[0])
   <div class="flex-1 min-h-0 w-full flex flex-col p-6 animate-slide-up overflow-y-auto overflow-x-hidden">
     <!-- Hero Section -->
     <div class="flex-1 flex flex-col items-center justify-center text-center space-y-6">
-      <div class="relative w-full aspect-square max-w-[320px] rounded-[40px] overflow-hidden shadow-premium">
-        <img src="../../assets/images/hero.png" alt="Hero" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"></div>
+      <div class="relative w-full aspect-square max-w-[320px] rounded-[40px] overflow-hidden shadow-premium group">
+        <img src="../../assets/images/hero.png" alt="Mysterious Minimalist Tree" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
       </div>
 
       <!-- Test Types Selector -->
