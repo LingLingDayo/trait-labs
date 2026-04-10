@@ -37,6 +37,8 @@ export interface PersonalityResult {
   description: string[]
   /** 代表 emoji */
   emoji: string
+  /** 结果配图 (可选), 若无则显示 emoji */
+  image?: string
   /** 主色调 (用于 UI 渲染) */
   color: string
   /** 优势标签 */

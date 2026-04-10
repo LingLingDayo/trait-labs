@@ -22,6 +22,13 @@ const rarityPercentage = computed(() => {
   return (0.5 + (hash % 40) / 10).toFixed(1)
 })
 
+// 获取图片路径
+const getImageUrl = (name?: string) => {
+  if (!name || !store.activeTestId) return null
+  // Vite 动态导入资产的标准写法，加入测试类型子目录
+  return new URL(`../../assets/images/${store.activeTestId}/${name}`, import.meta.url).href
+}
+
 const onRestart = () => {
   store.reset()
   emit('restart')
@@ -42,12 +49,26 @@ const onRestart = () => {
 
     <!-- 结果头部 -->
     <div class="text-center space-y-4" v-if="result">
+      <!-- 图片容器 -->
       <div 
-        class="text-6xl mx-auto w-24 h-24 flex items-center justify-center rounded-3xl"
-        :style="{ backgroundColor: result.color + '20', color: result.color }"
+        class="w-32 h-32 mx-auto flex items-center justify-center rounded-[40px] overflow-hidden shadow-premium bg-white group"
+        :style="{ border: `4px solid ${result.color}15` }"
       >
-        {{ result.emoji }}
+        <img 
+          v-if="result.image" 
+          :src="getImageUrl(result.image)!" 
+          :alt="result.title"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div 
+          v-else
+          class="text-6xl w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+          :style="{ backgroundColor: result.color + '10', color: result.color }"
+        >
+          {{ result.emoji }}
+        </div>
       </div>
+
       <div>
         <h1 class="text-3xl font-extrabold" :style="{ color: result.color }">{{ result.title }}</h1>
         <p class="text-slate-500 font-medium mt-1">{{ result.subtitle }}</p>
