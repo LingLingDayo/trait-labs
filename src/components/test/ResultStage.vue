@@ -57,7 +57,7 @@ const onRestart = () => {
 </script>
 
 <template>
-  <div class="w-full h-full overflow-y-auto px-6 py-8 space-y-6 animate-slide-up bg-transparent relative">
+  <div class="w-full h-full overflow-y-auto px-6 py-8 space-y-6 animate-slide-up bg-transparent relative scrollbar-hide">
     <!-- 顶部操作栏 -->
     <div class="flex items-center">
       <button 

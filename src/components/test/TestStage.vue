@@ -72,7 +72,7 @@ const handleConfirmExit = () => {
           class="flex-1 flex flex-col"
         >
           <!-- 中间题目内容区：flex-1 并允许内部滚动以防长文本，居中展示 -->
-          <div class="flex-1 flex flex-col justify-center px-6 overflow-y-auto">
+          <div class="flex-1 flex flex-col justify-center px-6 overflow-y-auto scrollbar-hide">
             <div class="py-4">
               <h2 class="text-2xl font-bold text-slate-800 leading-tight">
                 {{ store.currentQuestion.text }}

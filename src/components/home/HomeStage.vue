@@ -45,12 +45,12 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
 </script>
 
 <template>
-  <div class="flex-1 min-h-0 w-full flex flex-col p-6 animate-slide-up overflow-y-auto overflow-x-hidden">
+  <div class="flex-1 min-h-0 w-full flex flex-col px-6 py-4 animate-slide-up overflow-y-auto overflow-x-hidden scrollbar-hide">
     <!-- Hero Section -->
-    <div class="flex-1 flex flex-col items-center justify-center text-center space-y-6">
+    <div class="flex-1 flex flex-col items-center justify-center text-center space-y-4">
       <!-- 英雄图容器：增加背景色平滑过渡 -->
       <div 
-        class="relative w-full aspect-square max-w-[360px] rounded-[40px] overflow-hidden shadow-premium group transition-colors duration-700"
+        class="relative w-full aspect-square max-w-[280px] rounded-[32px] overflow-hidden shadow-premium group transition-colors duration-700"
         :class="typeThemes[activeTestType.id] || 'bg-white'"
       >
         <img 
@@ -63,7 +63,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
       <!-- Test Types Selector -->
       <div 
         ref="scrollContainer"
-        class="flex gap-2 w-full max-w-[320px] overflow-x-auto py-6 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
+        class="flex gap-2 w-full max-w-[320px] overflow-x-auto py-4 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
       >
         <button 
           v-for="item in testTypes" 
@@ -80,7 +80,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
         <Transition name="fade-slide" mode="out-in">
           <div :key="activeTestType.id" class="space-y-4">
             <h1 
-              class="text-4xl font-extrabold text-slate-900 leading-tight min-h-[5rem] flex items-center justify-center whitespace-nowrap"
+              class="text-4xl font-extrabold text-slate-900 leading-tight min-h-[4.5rem] flex items-center justify-center whitespace-nowrap"
             >
               <span v-html="activeTestType.tagline"></span>
             </h1>
@@ -91,7 +91,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
         </Transition>
       </div>
 
-      <div class="w-full max-w-[300px] pt-2">
+      <div class="w-full max-w-[300px] pt-1">
         <Button size="xl" class="w-full" @click="$emit('start', activeTestType.id)">
           立即开始测试
         </Button>
