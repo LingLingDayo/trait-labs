@@ -49,7 +49,7 @@ const handleConfirmExit = () => {
 
 <template>
   <!-- 外层容器设为 100dvh 并锁定 hidden，禁止全局滚动 -->
-  <div class="fixed inset-0 flex flex-col bg-slate-50 max-w-[480px] mx-auto overflow-hidden animate-slide-up">
+  <div class="fixed inset-0 h-[100svh] flex flex-col bg-slate-50 max-w-[480px] mx-auto overflow-hidden animate-slide-up">
     <!-- 顶部栏：返回按钮和进度条 -->
     <div class="px-6 pt-6 pb-2 flex items-center gap-4">
       <button 
@@ -122,7 +122,7 @@ const handleConfirmExit = () => {
     </div>
 
     <!-- 底部导航切换功能：移出 Transition，保持静态 -->
-    <div v-if="!store.isFinished && store.currentQuestion" class="w-full bg-transparent px-6 pt-0 pb-6">
+    <div v-if="!store.isFinished && store.currentQuestion" class="w-full bg-transparent px-6 pt-0 pb-6 safe-area-bottom">
       <div class="flex items-center justify-between gap-4">
         <button 
           class="flex-1 py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30 disabled:grayscale"
