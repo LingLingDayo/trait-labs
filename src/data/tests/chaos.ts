@@ -528,7 +528,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['执行力无上限', '责任感爆表', '不会在上班时间情绪化'],
       growthTips: ['下班做一件跟工作无关的事', '记住你不只是工具', '今晚早点睡'],
-      matchRules: { S: 31, E: 0, C: 45 },
+      matchRules: { S: 31, E: 0, C: 48 },
       rarityLabel: '⚙️ 顶级牛马！你已经是超越碳基生命的钢铁机器了'
     },
     // ── 社牛高 + 内耗低 + 整顿低 ──
