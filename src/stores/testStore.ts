@@ -94,9 +94,16 @@ export const useTestStore = defineStore('testStore', () => {
       maxScore: 100
     })) || []
     
+    const dimensionScores: Record<string, number> = {}
+    test?.dimensions.forEach(d => {
+      dimensionScores[d.key] = Math.random() * 100
+    })
+
     debugResultOverride.value = {
+      dimensionScores,
       primaryResult: result,
-      radarData: fakeRadarData
+      radarData: fakeRadarData,
+      matches: [{ result, matchRate: 1 }]
     }
   }
 
