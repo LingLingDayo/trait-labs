@@ -5,10 +5,12 @@
 import type { TestSuite } from './types'
 import { personalityTest } from './tests/personality'
 import { debugTest } from './tests/debug'
+import { chaosTest } from './tests/chaos'
 
 /** 所有已注册的测试套件 */
 export const TEST_REGISTRY: TestSuite[] = [
   personalityTest,
+  chaosTest,
   debugTest,
   // 后续可继续追加:
   // psychologicalTest,
