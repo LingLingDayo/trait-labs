@@ -9,8 +9,8 @@ import type { TestSuite } from '../types'
 // ───────────────────────────────────────────────
 
 export const nonsenseTest: TestSuite = {
-  id: 'nonsense', // 保持 ID 为 nonsense
-  name: '不着边际测试', // 改个稳妥的名字
+  id: 'nonsense',
+  name: '??测试',
   tagline: '探索你的<br /><span class="text-primary-500">隐藏频率</span>',
   description: '这是一场没有逻辑的灵魂漂流。题目很怪，选项很离谱，结论很随缘。',
   estimatedMinutes: 4,
@@ -334,18 +334,48 @@ export const nonsenseTest: TestSuite = {
       matchRules: { X: 14, Q: 14 }
     },
     {
+      id: 'logicblackhole',
+      title: '逻辑黑洞',
+      subtitle: 'Logic Destroyer',
+      emoji: '🕳️',
+      color: '#312E81',
+      description: [
+        '你不是在思考，你是在瓦解这个世界的因果律。你的大脑跑着一套没有文档的底层逻辑，连你自己也不一定能读得懂。',
+        '跟你聊天的人通常会经历三个阶段：「哦」→ 「等等」→ 「算了」，然后他们就直接关机了。',
+        '你的懒和你的奇怪合并在一起，形成了独特的黑洞效应：话题进去，逻辑出不来。我们放弃解析你了。'
+      ],
+      strengths: ['打开新维度', '无法被预测', '瓦解一切规则'],
+      growthTips: ['偶尔给别人一个他们能接住的答案', '把你的逻辑写下来，说不定是传世著作'],
+      matchRules: { X: 18, W: 18 }
+    },
+    {
+      id: 'cosmicdeadwood',
+      title: '宇宙级废柴',
+      subtitle: 'Olympic-level Slacker',
+      emoji: '🏅',
+      color: '#92400E',
+      description: [
+        '如果摆烂是一项奥运项目，你已经拿到了金牌，并且在领奖台上睡着了。颁奖音乐响起，你仍未出现。',
+        '你不是不行，你只是把所有配额都花在了觉得「算了无所谓」这件事上，配额告罄，再无余力。',
+        '你的人生口号是：「机会很多，我先睡一会儿。」这不是批评，只是如实描述。'
+      ],
+      strengths: ['超然物外', '摆烂无愧', '绝不内耗'],
+      growthTips: ['今天随便动一下就算数', '如果太难就……好吧你继续睡吧'],
+      matchRules: { W: 22 }
+    },
+    {
       id: 'masterofnothing',
       title: '什么都不是的大师',
       subtitle: 'Master of Absolutely Nothing',
       emoji: '🛋️',
       color: '#A8A29E',
       description: [
-        '你非常会摆，而且摆得相当有尊严，没有任何内疚。',
-        '「算了」是你的核心哲学，「等等再说」是你的时间管理方式。',
-        '你的存在对于这个过于紧绷的社会来说，是一种补丁。'
+        '经过漫长的修炼，你终于抵达了无我之境——不是哲学意义上的，而是字面意义上的：你什么都不是，并且做到了。',
+        '你没有在摆烂。你已经超越了摆烂的概念。你处于一种更高级的虚空状态：既不努力，也不放弃，只是……存在着，以极低的功耗维持运转。',
+        '这是一种成就，只是目前为止还没有人专门为它设立颁奖机制。'
       ],
-      strengths: ['精神内耗极低', '随遇而安'],
-      growthTips: ['试着动一下'],
+      strengths: ['抵达虚空之境', '彻底摆脱执念', '省电模式大师'],
+      growthTips: ['偶尔让自己什么都是一下', '任何目标都行，随便选一个'],
       matchRules: { W: 16 }
     },
     {
