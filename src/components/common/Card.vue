@@ -12,12 +12,19 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    class="bg-white border border-slate-100 rounded-[32px] shadow-soft transition-all duration-300"
+    class="relative bg-white border border-slate-100 rounded-[32px] shadow-soft transition-all duration-300 overflow-hidden"
     :class="[
       padding,
-      { 'hover:shadow-premium hover:-translate-y-1': hoverable }
+      { 'hover:shadow-premium hover:-translate-y-1 active:scale-[0.98] cursor-pointer select-none': hoverable }
     ]"
   >
     <slot />
   </div>
 </template>
+
+<style scoped>
+/* 确保点击状态更丝滑 */
+.active\:scale-\[0\.98\]:active {
+  transform: scale(0.98);
+}
+</style>
