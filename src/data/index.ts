@@ -9,9 +9,9 @@ import { chaosTest } from './tests/chaos'
 
 /** 所有已注册的测试套件 */
 export const TEST_REGISTRY: TestSuite[] = [
+  debugTest,
   personalityTest,
   chaosTest,
-  debugTest,
   // 后续可继续追加:
   // psychologicalTest,
   // careerTest,
