@@ -11,7 +11,7 @@ import { otakuTest } from './tests/otaku'
 
 /** 所有已注册的测试套件 */
 export const TEST_REGISTRY: TestSuite[] = [
-  debugTest,
+  ...(import.meta.env.DEV ? [debugTest] : []),
   personalityTest,
   chaosTest,
   nonsenseTest,

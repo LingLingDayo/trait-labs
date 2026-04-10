@@ -47,7 +47,7 @@ export const debugTest: TestSuite = {
       id: 'debug_master',
       title: '调试大师',
       subtitle: 'Debug Master',
-      image: 'visionary.png',
+    //   image: 'visionary.png',
       emoji: '🧙‍♂️',
       color: '#88D8C0',
       description: [
