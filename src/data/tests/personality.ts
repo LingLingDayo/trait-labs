@@ -682,7 +682,6 @@ export const personalityTest: TestSuite = {
       ],
       strengths: ['创意无限', '战略眼光', '洞察力强', '激励他人'],
       growthTips: ['加强执行力', '关注细节', '建立反馈机制'],
-      image: 'visionary.png',
       matchRules: { O: 30, C: 23, N: 23 } // 高O, 偏高C, 情绪稳定
     },
     {
@@ -698,7 +697,6 @@ export const personalityTest: TestSuite = {
       ],
       strengths: ['决策果断', '执行力强', '目标清晰', '天生领袖'],
       growthTips: ['提升同理心', '学会授权', '耐心倾听'],
-      image: 'commander.png',
       matchRules: { C: 30, E: 26, N: 23 } // 高C, 高E, 情绪稳定
     },
     {
