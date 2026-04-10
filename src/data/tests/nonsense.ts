@@ -386,7 +386,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['不可破解', '浑然天成的幽默'],
       growthTips: ['记得定期重启清内存', '别试图解释自己，越描越黑'],
-      matchRules: { X: 58 },
+      matchRules: { X: 63 },
       rarityLabel: '🪲 精神乱码！你这报错信息建议直接提交Github'
     },
     {
@@ -551,7 +551,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['潜力无限', '神秘感'],
       growthTips: ['先加载完今天'],
-      matchRules: { X: 0, W: 0, Q: 0 }
+      matchRules: {}
     }
   ]
 }

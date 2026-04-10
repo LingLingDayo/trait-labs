@@ -343,7 +343,7 @@ export const otakuTest: TestSuite = {
       color: '#8b5cf6',
       strengths: ['亚文化活化石', '万物皆可萌', '极意玩梗大师'],
       growthTips: ['多出去呼吸一下三次元的空气', '试着对圈外的朋友宽容一些，不要轻易发动替身攻击'],
-      matchRules: { OTAKU: 82 },
+      matchRules: { OTAKU: 86 },
       rarityLabel: '🛰️ 纯度爆表！你的DNA里刻满了禁忌的代码'
     },
     {
@@ -359,7 +359,7 @@ export const otakuTest: TestSuite = {
       color: '#d97706',
       strengths: ['情怀拉满', '品味老辣且独到', '如数家珍的百科全书'],
       growthTips: ['不要因为画风就拒绝新时代的好作品', '可以适当了解一下现在的推子们都在玩什么'],
-      matchRules: { OLD: 54 },
+      matchRules: { OLD: 57 },
       rarityLabel: '🏺 时代的残党！建议作为二次元非遗进行保护'
     },
     {
@@ -391,7 +391,7 @@ export const otakuTest: TestSuite = {
       color: '#10b981',
       strengths: ['身心异常健康', '完美融入现实社会', '情绪管理大师'],
       growthTips: ['其实某些时候发发神经也挺减压的', '无聊时找部口碑神作试着入坑吧，也许会发现新世界'],
-      matchRules: { NORMIE: 76 },
+      matchRules: { NORMIE: 81 },
       rarityLabel: '🏙️ 极度稀缺的正常人！在这个满是怪胎的圈子里你最独特'
     },
     {
