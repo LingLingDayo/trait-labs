@@ -37,51 +37,93 @@ const onOptionSelect = (optionId: string) => {
 </script>
 
 <template>
-  <div class="flex-1 w-full flex flex-col px-6 pt-2 pb-6 animate-slide-up">
-    <!-- 当正在答题时渲染 -->
-    <div v-if="!store.isFinished && store.currentQuestion" class="flex-1 flex flex-col gap-4 pt-2">
-      <!-- ProgressBar 接受 0~1 的进度, 由于 store progress 是小数，我们需要乘 100 -->
+  <!-- 外层容器设为 100dvh 并锁定 hidden，禁止全局滚动 喵~ -->
+  <div class="fixed inset-0 flex flex-col bg-slate-50 max-w-[480px] mx-auto overflow-hidden animate-slide-up">
+    <!-- 顶部进度条区 -->
+    <div class="px-6 pt-6 pb-2">
       <ProgressBar :progress="store.progress * 100" show-label />
-      
-      <div class="space-y-4">
-        <h2 class="text-2xl font-bold text-slate-800 leading-normal">{{ store.currentQuestion.text }}</h2>
-        
-        <div class="space-y-3">
-          <Card 
-            v-for="option in store.currentQuestion.options" 
-            :key="option.id"
-            hoverable 
-            padding="p-4" 
-            class="border-2 transition-all duration-300"
-            :class="[
-              selectedOptionId === option.id 
-                ? 'border-primary-500 bg-primary-50/50 shadow-md scale-[1.02]' 
-                : 'border-transparent bg-white shadow-soft'
-            ]"
-            @click="onOptionSelect(option.id)"
-          >
-            <div class="flex items-center gap-3">
-              <div 
-                class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300"
-                :class="[
-                  selectedOptionId === option.id
-                    ? 'border-primary-500 bg-primary-500 scale-110 shadow-sm'
-                    : 'border-slate-200 bg-white'
-                ]"
-              >
-                <Transition name="pop">
-                  <div v-if="selectedOptionId === option.id" class="w-2 h-2 rounded-full bg-white"></div>
-                </Transition>
-              </div>
-              <span 
-                class="font-medium transition-colors duration-300"
-                :class="selectedOptionId === option.id ? 'text-primary-800 scale-[1.01]' : 'text-slate-700'"
-              >
-                {{ option.label }}
-              </span>
+    </div>
+
+    <!-- 中间题目内容区：flex-1 并允许内部滚动以防长文本，居中展示 -->
+    <div 
+      v-if="!store.isFinished && store.currentQuestion" 
+      class="flex-1 flex flex-col justify-center px-6 overflow-y-auto"
+    >
+      <div class="py-4">
+        <h2 class="text-2xl font-bold text-slate-800 leading-tight">
+          {{ store.currentQuestion.text }}
+        </h2>
+      </div>
+    </div>
+
+    <!-- 底部选项及导航区：单纯的白色背景，无抽屉效果 喵~ -->
+    <div 
+      v-if="!store.isFinished && store.currentQuestion" 
+      class="w-full bg-transparent px-6 pt-4 pb-6 space-y-4"
+    >
+      <!-- 选项列表 -->
+      <div class="space-y-3">
+        <Card 
+          v-for="option in store.currentQuestion.options" 
+          :key="option.id"
+          hoverable 
+          padding="p-4" 
+          class="border-2 transition-all duration-300"
+          :class="[
+            selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id
+              ? 'border-primary-500 bg-primary-50/50' 
+              : 'border-slate-100 bg-white'
+          ]"
+          @click="onOptionSelect(option.id)"
+        >
+          <div class="flex items-center gap-3">
+            <div 
+              class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300"
+              :class="[
+                selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id
+                  ? 'border-primary-500 bg-primary-500 scale-110'
+                  : 'border-slate-200 bg-white'
+              ]"
+            >
+              <Transition name="pop">
+                <div v-if="selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id" class="w-1.5 h-1.5 rounded-full bg-white"></div>
+              </Transition>
             </div>
-          </Card>
+            <span 
+              class="font-medium transition-colors duration-300"
+              :class="selectedOptionId === option.id || store.answers[store.currentQuestion.id] === option.id ? 'text-primary-800' : 'text-slate-700'"
+            >
+              {{ option.label }}
+            </span>
+          </div>
+        </Card>
+      </div>
+
+      <!-- 底部导航切换功能 -->
+      <div class="flex items-center justify-between gap-4">
+        <button 
+          class="flex-1 py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30 disabled:grayscale"
+          :class="store.currentIndex > 0 ? 'bg-slate-100 text-slate-600' : 'text-transparent bg-transparent pointer-events-none'"
+          :disabled="store.currentIndex <= 0"
+          @click="store.prevQuestion()"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          <span class="font-bold text-sm">上一题</span>
+        </button>
+
+        <div class="text-slate-300 text-xs font-medium px-2">
+          {{ store.currentIndex + 1 }} / {{ store.totalQuestions }}
         </div>
+
+        <button 
+          class="flex-1 py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30"
+          :class="store.answers[store.currentQuestion.id] ? 'bg-primary-100 text-primary-600' : 'bg-slate-100 text-slate-300'"
+          :disabled="!store.answers[store.currentQuestion.id] || store.currentIndex >= store.totalQuestions - 1"
+          @click="store.nextQuestion()"
+        >
+          <span class="font-bold text-sm">下一题</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </div>
