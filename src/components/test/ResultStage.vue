@@ -11,6 +11,17 @@ const result = computed(() => store.computedResult?.primaryResult)
 // 获取雷达图数据或维度得分
 const radarData = computed(() => store.computedResult?.radarData || [])
 
+// 根据ID一致性生成伪随机稀有度 (0.5% ~ 4.5%)
+const rarityPercentage = computed(() => {
+  if (!result.value?.id) return '1.0'
+  let hash = 0
+  for (let i = 0; i < result.value.id.length; i++) {
+    hash = result.value.id.charCodeAt(i) + ((hash << 5) - hash)
+  }
+  hash = Math.abs(hash)
+  return (0.5 + (hash % 40) / 10).toFixed(1)
+})
+
 const onRestart = () => {
   store.reset()
   emit('restart')
@@ -40,6 +51,18 @@ const onRestart = () => {
       <div>
         <h1 class="text-3xl font-extrabold" :style="{ color: result.color }">{{ result.title }}</h1>
         <p class="text-slate-500 font-medium mt-1">{{ result.subtitle }}</p>
+        
+        <!-- 稀有度标签 -->
+        <div 
+          class="inline-block mt-3 px-3 py-1 rounded-full text-xs font-bold border"
+          :style="{ 
+            backgroundColor: result.color + '10',
+            borderColor: result.color + '30',
+            color: result.color 
+          }"
+        >
+          ✨ 极度稀有！全球仅有 {{ rarityPercentage }}% 的人是{{ result.title }}
+        </div>
       </div>
     </div>
 
