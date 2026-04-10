@@ -63,14 +63,14 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
       <!-- Test Types Selector -->
       <div 
         ref="scrollContainer"
-        class="flex gap-2 w-full max-w-[320px] overflow-x-auto py-4 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
+        class="flex gap-2 w-full max-w-[320px] overflow-x-auto py-6 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
       >
         <button 
           v-for="item in testTypes" 
           :key="item.id"
           @click="selectType($event, item)"
           class="flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 whitespace-nowrap"
-          :class="activeTestType.id === item.id ? 'bg-primary-500 text-white shadow-lg scale-105' : 'bg-white/60 text-slate-400 hover:bg-white hover:text-slate-600'"
+          :class="activeTestType.id === item.id ? 'bg-primary-500 text-white shadow-lg scale-105' : 'bg-white/60 text-slate-400 hover:bg-white hover:text-slate-600 shadow-sm'"
         >
           {{ item.name }}
         </button>
