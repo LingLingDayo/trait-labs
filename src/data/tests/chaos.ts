@@ -511,7 +511,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['自带稳定光环', '掌控全场', '说话有分量', '凝聚力MAX'],
       growthTips: ['也要让别人妈妈你一下', '偶尔放飞一下自我', '减少包揽'],
-      matchRules: { S: 20, E: 0, C: 18 }
+      matchRules: { S: 39, E: 0, C: 36 }
     },
     // ── 整顿极高 + 社牛中 + 内耗几乎为零 ──
     {
@@ -527,7 +527,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['执行力无上限', '责任感爆表', '不会在上班时间情绪化'],
       growthTips: ['下班做一件跟工作无关的事', '记住你不只是工具', '今晚早点睡'],
-      matchRules: { S: 16, E: 0, C: 28 }
+      matchRules: { S: 31, E: 0, C: 52 }
     },
     // ── 社牛高 + 内耗低 + 整顿低 ──
     {
@@ -543,7 +543,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['随遇而安', '社交天赋', '制造欢笑', '佛系快乐'],
       growthTips: ['存一点钱', '想想三天后', '别只图热闹'],
-      matchRules: { S: 22, E: 0, C: 0 }
+      matchRules: { S: 43, E: 0, C: 0 }
     },
     // ── 社牛高 + 内耗高 ──
     {
@@ -559,7 +559,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['超强表现力', '共情能力强', '场控大师'],
       growthTips: ['不用每次都是那个活跃的人', '允许自己沉默', '跟自己坦诚'],
-      matchRules: { S: 20, E: 20 }
+      matchRules: { S: 39, E: 43 }
     },
     // ── 社恐 + 内耗高 + 整顿低 ──
     {
@@ -575,7 +575,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['独立思考', '洞察细节', '不会给别人添麻烦'],
       growthTips: ['出门晒晒太阳', '少想多做', '给自己放个假'],
-      matchRules: { S: 0, E: 22, C: 0 }
+      matchRules: { S: 0, E: 47, C: 0 }
     },
     // ── 社恐 + 内耗低 + 整顿高 ──
     {
@@ -591,7 +591,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['执行力爆表', '不需要认可', '低调扛把子', '自律出圈'],
       growthTips: ['偶尔表达一下自己', '让别人进来一点', '别把自己逼太紧'],
-      matchRules: { S: 0, E: 0, C: 22 }
+      matchRules: { S: 0, E: 0, C: 44 }
     },
     // ── 三维均衡偏高 ──
     {
@@ -607,7 +607,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['适应力强', '无处不在', '人缘好', '灵活应对'],
       growthTips: ['选一件事做深', '找到真正想要什么', '不要总是「还好还好」'],
-      matchRules: { S: 14, E: 14, C: 14 }
+      matchRules: { S: 27, E: 30, C: 28 }
     },
     // ── 社牛高 + 整顿高 ──
     {
@@ -623,7 +623,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['组织力超强', '号召力', '行动主导', '话题制造'],
       growthTips: ['适当放权', '让别人主导一次', '休息一下自己'],
-      matchRules: { S: 22, C: 20 }
+      matchRules: { S: 43, C: 40 }
     },
     // ── 社牛高 + 内耗中 + 整顿低 ──
     {
@@ -639,7 +639,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['顶级脑补', '理论大师', '自带说服力', '气氛担当'],
       growthTips: ['下楼取个快递试试', '少规划多喘气', '实际动手做点什么'],
-      matchRules: { S: 20, E: 14, C: 0 }
+      matchRules: { S: 39, E: 30, C: 0 }
     },
     // ── 内耗高 + 整顿高 ──
     {
@@ -655,7 +655,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['自律顶尖', '提前规避风险', '凡事有备', '成绩亮眼'],
       growthTips: ['允许自己犯错', '放松不等于放弃', '给焦虑放个假'],
-      matchRules: { E: 20, C: 20 }
+      matchRules: { E: 43, C: 40 }
     },
     // ── 社牛高 + 内耗低 + 整顿中 ──
     {
@@ -671,7 +671,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['天花板上限', '心态超好', '压力下稳定发挥', '不自我消耗'],
       growthTips: ['偶尔用全力', '发掘一下自己的上限', '别对自己太佛系'],
-      matchRules: { S: 18, E: 0, C: 14 }
+      matchRules: { S: 35, E: 0, C: 28 }
     },
     // ── 社恐 + 整顿高 + 内耗低 ──
     {
@@ -687,7 +687,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['独立强悍', '结果导向', '不受干扰', '说话算数'],
       growthTips: ['多一点人情味', '让别人看见你', '适当敞开心扉'],
-      matchRules: { S: 0, E: 0, C: 18 }
+      matchRules: { S: 0, E: 0, C: 36 }
     },
     // ── 三高 ──
     {
@@ -703,7 +703,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['全场通吃', '高共情', '高能量', '不可替代'],
       growthTips: ['学会依赖别人', '情绪要宣泄出去', '把一部分事情扔给别人'],
-      matchRules: { S: 22, E: 22, C: 22 }
+      matchRules: { S: 43, E: 47, C: 44 }
     },
     // ── 社恐 + 内耗高 + 整顿高 ──
     {
@@ -719,7 +719,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['精益求精', '高标准', '耐得住寂寞', '深度专注'],
       growthTips: ['少一点自我苛责', '把成果展示给别人', '允许自己不完美'],
-      matchRules: { S: 0, E: 20, C: 20 }
+      matchRules: { S: 0, E: 43, C: 40 }
     },
     // ── 社恐 + 内耗极高 + 整顿中 ── (404 异常型)
     {
@@ -735,7 +735,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['独特到无法被复制', '拥有常人没有的视角', '天然防范被理解'],
       growthTips: ['写下来，帮别人理解你', '找一个频率接近的人', '也许你不是Bug，你是彩蛋'],
-      matchRules: { S: 0, E: 26, C: 14 }
+      matchRules: { S: 0, E: 56, C: 28 }
     },
     // ── 社牛高 + 内耗高 + 整顿低 ──
     {
@@ -751,7 +751,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['制造欢笑', '化解尴尬', '高情感浓度', '可爱破坏力'],
       growthTips: ['别只逗别人，偶尔认真说说自己', '跟人说「我今天不太好」', '整理一下自己的房间'],
-      matchRules: { S: 22, E: 22, C: 0 }
+      matchRules: { S: 43, E: 47, C: 0 }
     },
     // ── 社牛中 + 内耗高 + 整顿低 ──
     {
@@ -767,7 +767,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['情感丰富', '共情力强', '真实不做作', '感受力细腻'],
       growthTips: ['给情绪一个出口', '别让感受全堵在心里', '找个能懂你的人说说'],
-      matchRules: { S: 12, E: 20, C: 0 }
+      matchRules: { S: 24, E: 43, C: 0 }
     },
     // ── 存在感极低（低S+低E+低C但非绝对零分）──
     {
@@ -783,7 +783,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['零存在感负担', '天然防打扰', '从不引起纷争'],
       growthTips: ['说一句让别人记住你的话', '向前站一步', '你值得被看见'],
-      matchRules: { S: 6, E: 0, C: 6 }
+      matchRules: { S: 12, E: 0, C: 12 }
     },
     // ── 三低 ──
     {
@@ -815,7 +815,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['随遇而安', '不制造麻烦', '心里有自己一套', '淡然处世'],
       growthTips: ['试着推一件事往前走', '把心里的小情绪说给信任的人听', '给生活加一点期待'],
-      matchRules: { S: 0, E: 12, C: 0 }
+      matchRules: { S: 0, E: 26, C: 0 }
     },
     // ── 社牛低 + 内耗低 + 整顿高 ──
     {
@@ -831,7 +831,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['超强独立性', '自我完足', '高效', '不依赖外界认可'],
       growthTips: ['组个队试试', '接受一下别人的帮助', '合作不等于依赖'],
-      matchRules: { S: 0, E: 4, C: 20 }
+      matchRules: { S: 0, E: 9, C: 40 }
     },
     // ── 社恐 + 高内耗 ──
     {
@@ -847,7 +847,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['深度思考', '细腻敏感', '提前感知风险', '内心丰富'],
       growthTips: ['把脑内对话说出来', '找人分担一下', '做个深呼吸，现在就做'],
-      matchRules: { S: 4, E: 22 }
+      matchRules: { S: 8, E: 47 }
     },
     // ── 社牛低 + 内耗中 + 整顿高 ──
     {
@@ -863,7 +863,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['行动力强', '抗干扰', '默默输出', '稳定可靠'],
       growthTips: ['让自己被看见一次', '允许自己有情绪', '不必总是一个人扛'],
-      matchRules: { S: 0, E: 10, C: 18 }
+      matchRules: { S: 0, E: 22, C: 36 }
     },
     // ── 社牛中 + 整顿中 ──
     {
@@ -879,7 +879,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['情绪稳定', '不给人添乱', '自得其乐', '润物细无声'],
       growthTips: ['偶尔出出风头', '让别人知道你有多厉害', '适当争取一下'],
-      matchRules: { S: 12, C: 12 }
+      matchRules: { S: 24, C: 24 }
     },
     // ── 社牛中 + 内耗低 + 整顿低 ──
     {
@@ -895,7 +895,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['心态无敌', '不消耗自己', '容易知足', '自在生活'],
       growthTips: ['偶尔给自己设个小目标', '无欲无求的背面是不是有点空？', '在意一件事试试'],
-      matchRules: { S: 12, E: 0, C: 0 }
+      matchRules: { S: 24, E: 0, C: 0 }
     },
     // ── 渣男型（高社牛 + 低整顿 + 低内耗） ──
     {
@@ -911,7 +911,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['顶级多巴胺收割', '享乐天才', '活在当下', '人格魅力黑洞'],
       growthTips: ['想想别人的感受（可选）', '稍微收敛一点点（为了可持续发展）', '继续保持你的艺术感'],
-      matchRules: { S: 24, E: 4, C: 4 }
+      matchRules: { S: 47, E: 9, C: 8 }
     },
     // ── 默认兜底 ──
     {
@@ -927,7 +927,7 @@ export const chaosTest: TestSuite = {
       ],
       strengths: ['无法定义', '独特存在', '永远出乎意料'],
       growthTips: ['先搞清楚自己想要什么', '认识自己是一辈子的事', '做颗好人就完事了'],
-      matchRules: { S: 8, E: 8, C: 8 }
+      matchRules: { S: 16, E: 17, C: 16 }
     }
   ]
 }

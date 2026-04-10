@@ -386,7 +386,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['不可破解', '浑然天成的幽默'],
       growthTips: ['记得定期重启清内存', '别试图解释自己，越描越黑'],
-      matchRules: { X: 26 }
+      matchRules: { X: 76 }
     },
     {
       id: 'walkingprose',
@@ -401,7 +401,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['自带BGM', '极强的氛围感'],
       growthTips: ['学习一些接地气的生存技能', '别让自己飘得太远'],
-      matchRules: { Q: 24 }
+      matchRules: { Q: 62 }
     },
     {
       id: 'cosmicdeadwood',
@@ -416,7 +416,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['超然物外', '摆烂无愧', '绝不内耗'],
       growthTips: ['今天随便动一下就算数', '如果太难就……好吧你继续睡吧'],
-      matchRules: { W: 26 }
+      matchRules: { W: 87 }
     },
     {
       id: 'logicblackhole',
@@ -431,7 +431,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['打开新维度', '无法被预测', '瓦解一切规则'],
       growthTips: ['偶尔给别人一个他们能接住的答案', '把你的逻辑写下来，说不定是传世著作'],
-      matchRules: { X: 20, W: 20 }
+      matchRules: { X: 58, W: 67 }
     },
     {
       id: 'schrodingeremployee',
@@ -446,7 +446,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['灵活的底线', '薛定谔式产出'],
       growthTips: ['小心观测者效应', '偶尔展示一下努力的那一面'],
-      matchRules: { W: 20, X: 16 }
+      matchRules: { W: 67, X: 47 }
     },
     {
       id: 'cyberplant',
@@ -461,7 +461,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['情绪极其稳定', '低碳环保'],
       growthTips: ['记得挪动一下脖子', '多喝水，多晒真实的太阳'],
-      matchRules: { W: 20, Q: 16 }
+      matchRules: { W: 67, Q: 42 }
     },
     {
       id: 'cosmicweirdo',
@@ -476,7 +476,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['完全自洽', '想象力无上限', '气场独特'],
       growthTips: ['记得吃饭', '偶尔普通一下'],
-      matchRules: { X: 18, Q: 16 }
+      matchRules: { X: 52, Q: 42 }
     },
     {
       id: 'minimafia',
@@ -491,7 +491,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['局部称王称霸', '强大的心理暗示'],
       growthTips: ['别跟冰箱里的剩菜较劲了', '把魄力用在宏观世界上'],
-      matchRules: { Q: 16, X: 12 }
+      matchRules: { Q: 42, X: 35 }
     },
     {
       id: 'aestheticprotagonist',
@@ -505,7 +505,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['独特质感', '感受力细腻'],
       growthTips: ['生活不只是旁观'],
-      matchRules: { Q: 18 }
+      matchRules: { Q: 47 }
     },
     {
       id: 'masterofnothing',
@@ -520,7 +520,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['抵达虚空之境', '彻底摆脱执念', '省电模式大师'],
       growthTips: ['偶尔让自己什么都是一下', '任何目标都行，随便选一个'],
-      matchRules: { W: 16 }
+      matchRules: { W: 54 }
     },
     {
       id: 'normalhumanbean',
@@ -534,7 +534,7 @@ export const nonsenseTest: TestSuite = {
       ],
       strengths: ['正常即是力量', '环境适应力'],
       growthTips: ['做件不正常的事'],
-      matchRules: { X: 6, W: 6, Q: 6 }
+      matchRules: { X: 17, W: 20, Q: 16 }
     },
     {
       id: 'pendingclassification',
