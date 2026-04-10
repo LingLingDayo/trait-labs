@@ -3,35 +3,35 @@ import type { TestSuite } from '../types'
 export const otakuTest: TestSuite = {
   id: 'otaku',
   name: '二次元浓度鉴定',
-  tagline: '测测你的DNA里刻着多少动漫梗',
-  description: '从1995的远古遗血到近年新番弄潮儿，跨越30年的ACG硬核大考验。三十道直击灵魂的拷问，撕下你的伪装，你的二次元纯度究竟有多高？',
+  tagline: '你的DNA里刻着多少<br /><span class="text-primary-500">动漫梗？</span>',
+  description: '跨越30年的ACG硬核大考验，三十道题直击灵魂，鉴定你的二次元纯度。',
   estimatedMinutes: 5,
   dimensions: [
     {
       key: 'OLD',
       label: '远古记忆',
-      description: '对千禧年前后及经典老番梗的熟度',
+      description: '经典老番梗的熟练度',
       lowLabel: '时代弄潮儿',
       highLabel: '二次元婆罗门'
     },
     {
       key: 'NEW',
       label: '新番雷达',
-      description: '对近年（2023-2026）爆款番剧梗的敏感度',
+      description: '近年爆款新番梗的敏感度',
       lowLabel: '怀旧养老党',
       highLabel: '追番发烧友'
     },
     {
       key: 'OTAKU',
       label: '纯度指标',
-      description: '作为核心ACGN爱好者的硬核与深潜程度',
+      description: '核心爱好者的硬核程度',
       lowLabel: '路人吃瓜',
       highLabel: '究极老牌亚文化'
     },
     {
       key: 'NORMIE',
       label: '现充波长',
-      description: '散发出的普通人（三次元）阳光气息和生活常识',
+      description: '三次元生活常识与气息',
       lowLabel: '资深家里蹲',
       highLabel: '阳光开朗社交达人'
     }
