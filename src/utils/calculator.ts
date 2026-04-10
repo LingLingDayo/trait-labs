@@ -1,4 +1,4 @@
-import type { TestSuite, PersonalityResult, QuestionOption } from '../data/types'
+import type { TestSuite, PersonalityResult } from '../data/types'
 
 export interface RadarDataPoint {
   dimension: string
