@@ -45,7 +45,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
 </script>
 
 <template>
-  <div class="flex-1 min-h-0 w-full flex flex-col px-6 py-4 animate-slide-up overflow-y-auto overflow-x-hidden scrollbar-hide">
+  <div class="flex-1 min-h-0 w-full flex flex-col px-6 pt-4 pb-12 animate-slide-up overflow-y-auto overflow-x-hidden scrollbar-hide safe-area-bottom">
     <!-- Hero Section -->
     <div class="flex-1 flex flex-col items-center justify-center text-center space-y-4">
       <!-- 英雄图容器：增加背景色平滑过渡 -->

@@ -174,7 +174,7 @@ const onRestart = () => {
 
 
     <!-- 底部按钮 -->
-    <div class="pt-4 pb-8 flex flex-col items-center space-y-8">
+    <div class="pt-4 pb-8 flex flex-col items-center space-y-8 safe-area-bottom">
       <button 
         class="w-full py-4 px-6 rounded-2xl text-white font-bold text-lg shadow-xl active:scale-95 transition-all"
         :style="{ backgroundColor: result?.color || '#A78BFA', boxShadow: `0 10px 25px -5px ${result?.color || '#A78BFA'}40` }"
