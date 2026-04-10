@@ -4,19 +4,19 @@ import AppHeader from './components/layout/AppHeader.vue'
 import AppFooter from './components/layout/AppFooter.vue'
 import HomeStage from './components/home/HomeStage.vue'
 import TestStage from './components/test/TestStage.vue'
+import { useTestStore } from './stores/testStore'
 
 const isStarted = ref(false)
-const progress = ref(0)
+const store = useTestStore()
 
-const startTest = () => {
+const startTest = (testId: string) => {
+  store.startTest(testId)
   isStarted.value = true
-  const interval = setInterval(() => {
-    if (progress.value < 100) {
-      progress.value += 5
-    } else {
-      clearInterval(interval)
-    }
-  }, 100)
+}
+
+const onTestComplete = () => {
+  console.log("Test Finished. Result:", store.computedResult)
+  // 暂时输出到 console, 这边可以加一个结果展现场景
 }
 </script>
 
@@ -30,7 +30,7 @@ const startTest = () => {
 
     <main class="flex-1 w-full flex flex-col">
       <HomeStage v-if="!isStarted" @start="startTest" />
-      <TestStage v-else :progress="progress" />
+      <TestStage v-else @complete="onTestComplete" />
     </main>
 
     <AppFooter />

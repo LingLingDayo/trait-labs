@@ -47,7 +47,7 @@ const activeTestType = ref(testTypes[0])
       </div>
 
       <div class="w-full max-w-[300px] pt-2">
-        <Button size="xl" class="w-full" @click="$emit('start')">
+        <Button size="xl" class="w-full" @click="$emit('start', activeTestType.id)">
           立即开始测试
         </Button>
         <p class="text-xs text-slate-400 mt-4">完成测试约需 3 分钟</p>
