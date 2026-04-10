@@ -66,6 +66,15 @@ export const useTestStore = defineStore('testStore', () => {
     }
   }
 
+  function nextQuestion() {
+    if (currentIndex.value < totalQuestions.value - 1) {
+      const currentQId = currentQuestion.value?.id
+      if (currentQId && answers.value[currentQId]) {
+        currentIndex.value++
+      }
+    }
+  }
+
   function reset() {
     activeTestId.value = null
     answers.value = {}
@@ -87,6 +96,7 @@ export const useTestStore = defineStore('testStore', () => {
     startTest,
     answer,
     prevQuestion,
+    nextQuestion,
     reset
   }
 })

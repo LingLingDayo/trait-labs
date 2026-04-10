@@ -15,7 +15,7 @@ const activeTestType = ref(testTypes[0])
 </script>
 
 <template>
-  <div class="flex-1 w-full flex flex-col p-6 animate-slide-up">
+  <div class="flex-1 min-h-0 w-full flex flex-col p-6 animate-slide-up overflow-y-auto overflow-x-hidden">
     <!-- Hero Section -->
     <div class="flex-1 flex flex-col items-center justify-center text-center space-y-6">
       <div class="relative w-full aspect-square max-w-[320px] rounded-[40px] overflow-hidden shadow-premium">

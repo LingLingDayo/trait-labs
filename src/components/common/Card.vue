@@ -15,7 +15,7 @@ withDefaults(defineProps<Props>(), {
     class="relative bg-white border border-slate-100 rounded-[32px] shadow-soft transition-all duration-300 overflow-hidden"
     :class="[
       padding,
-      { 'hover:shadow-premium hover:-translate-y-1 active:scale-[0.98] cursor-pointer select-none': hoverable }
+      { 'hover:shadow-premium active:scale-[0.98] cursor-pointer select-none': hoverable }
     ]"
   >
     <slot />
