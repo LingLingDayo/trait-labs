@@ -8,24 +8,25 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6', // Main Primary
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          50: '#f5f3ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#a78bfa', // Macaron Lavender
+          600: '#8b5cf6',
+          700: '#7c3aed',
+          800: '#6d28d9',
+          900: '#5b21b6',
         },
         accent: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
+          50: '#f0fdf9',
+          100: '#ccfbf0',
+          200: '#99f6e0',
           300: '#5eead4',
           400: '#2dd4bf',
-          500: '#14b8a6', // Fresh Teal
+          500: '#88d8c0', // Macaron Mint
+          600: '#66c2a5',
         }
       },
       fontFamily: {

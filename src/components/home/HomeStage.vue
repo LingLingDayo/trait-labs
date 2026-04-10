@@ -56,7 +56,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
           :key="item.id"
           @click="selectType($event, item)"
           class="flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 whitespace-nowrap"
-          :class="activeTestType.id === item.id ? 'bg-primary-500 text-white shadow-lg scale-105' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'"
+          :class="activeTestType.id === item.id ? 'bg-primary-500 text-white shadow-lg scale-105' : 'bg-white/60 text-slate-400 hover:bg-white hover:text-slate-600'"
         >
           {{ item.name }}
         </button>

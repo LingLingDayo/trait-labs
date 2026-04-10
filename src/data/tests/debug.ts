@@ -48,7 +48,7 @@ export const debugTest: TestSuite = {
       title: '调试大师',
       subtitle: 'Debug Master',
       emoji: '🧙‍♂️',
-      color: '#10b981',
+      color: '#88D8C0',
       description: [
         '恭喜你！你展现出了极佳的开发者特质。',
         '在调试题库中，你的得分触碰了天花板，这意味着现在的系统逻辑工作得非常完美喵！',
@@ -63,7 +63,7 @@ export const debugTest: TestSuite = {
       title: '调试学者',
       subtitle: 'Debug Learner',
       emoji: '🐣',
-      color: '#3b82f6',
+      color: '#A78BFA',
       description: [
         '看起来系统逻辑已经跑通了，虽然你的得分没到最高，但这就是测试的意义所在喵。',
         '作为一个调试学者，你还在不断探索工具的边界。',
