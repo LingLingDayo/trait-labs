@@ -18,7 +18,17 @@ const onRestart = () => {
 </script>
 
 <template>
-  <div class="w-full h-full overflow-y-auto px-6 py-8 space-y-6 animate-slide-up bg-slate-50">
+  <div class="w-full h-full overflow-y-auto px-6 py-8 space-y-6 animate-slide-up bg-slate-50 relative">
+    <!-- 顶部操作栏 -->
+    <div class="flex items-center">
+      <button 
+        class="w-10 h-10 flex items-center justify-center rounded-xl bg-white border-2 border-slate-100 text-slate-500 shadow-sm transition-all active:scale-95" 
+        @click="onRestart"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+    </div>
+
     <!-- 结果头部 -->
     <div class="text-center space-y-4" v-if="result">
       <div 
