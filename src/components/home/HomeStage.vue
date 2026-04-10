@@ -76,22 +76,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
         <Button size="xl" class="w-full" @click="$emit('start', activeTestType.id)">
           立即开始测试
         </Button>
-        <p class="text-xs text-slate-400 mt-4">完成测试约需 3 分钟</p>
       </div>
-    </div>
-
-    <!-- Features -->
-    <div class="grid grid-cols-2 gap-4 mt-6">
-      <Card padding="p-4" class="text-center">
-        <div class="text-2xl mb-1">🎯</div>
-        <div class="text-sm font-bold text-slate-800">精准定位</div>
-        <div class="text-[10px] text-slate-400 mt-1">深度自研模型</div>
-      </Card>
-      <Card padding="p-4" class="text-center">
-        <div class="text-2xl mb-1">📊</div>
-        <div class="text-sm font-bold text-slate-800">量化分析</div>
-        <div class="text-[10px] text-slate-400 mt-1">多维度可视化</div>
-      </Card>
     </div>
   </div>
 </template>
