@@ -377,7 +377,7 @@ export const nonsenseTest: TestSuite = {
       id: 'mentalgibberish',
       title: '精神乱码',
       subtitle: 'Error 404 Soul Not Found',
-      emoji: '🪲',
+      emoji: '👾',
       color: '#10B981',
       description: [
         '你的思维方式像极了一长串乱码，没人能解析，包括你自己。你仿佛是造物主在键盘上睡着了不小心敲出来的产物。',
@@ -387,7 +387,7 @@ export const nonsenseTest: TestSuite = {
       strengths: ['不可破解', '浑然天成的幽默'],
       growthTips: ['记得定期重启清内存', '别试图解释自己，越描越黑'],
       matchRules: { X: 63 },
-      rarityLabel: '🪲 精神乱码！你这报错信息建议直接提交Github'
+      rarityLabel: '👾 精神乱码！你这报错信息建议直接提交Github'
     },
     {
       id: 'walkingprose',
@@ -455,7 +455,7 @@ export const nonsenseTest: TestSuite = {
       id: 'cyberplant',
       title: '赛博盆栽',
       subtitle: 'Needs Wi-Fi and Compliments',
-      emoji: '🪴',
+      emoji: '🌵',
       color: '#059669',
       description: [
         '你把自己稳稳地种在了一个赛博花盆里。你不想移动，也不太想进行现实里的光合作用，岁月静好是你最大的追求。',
@@ -465,7 +465,7 @@ export const nonsenseTest: TestSuite = {
       strengths: ['情绪极其稳定', '低碳环保'],
       growthTips: ['记得挪动一下脖子', '多喝水，多晒真实的太阳'],
       matchRules: { W: 67, Q: 42 },
-      rarityLabel: '🪴 赛博盆栽！只要有WiFi你就能活到地老天荒'
+      rarityLabel: '🌵 赛博盆栽！只要有WiFi你就能活到地老天荒'
     },
     {
       id: 'cosmicweirdo',
@@ -530,7 +530,7 @@ export const nonsenseTest: TestSuite = {
       id: 'normalhumanbean',
       title: '正常人类',
       subtitle: 'Suspiciously Normal',
-      emoji: '🫘',
+      emoji: '🧑',
       color: '#D1D5DB',
       description: [
         '我们的算法发现你……相当正常。这在我们的数据库里是一个罕见的结论。',

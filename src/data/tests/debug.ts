@@ -63,7 +63,7 @@ export const debugTest: TestSuite = {
       id: 'debug_learner',
       title: '调试学者',
       subtitle: 'Debug Learner',
-      emoji: '🐣',
+      emoji: '🐢',
       color: '#A78BFA',
       description: [
         '看起来系统逻辑已经跑通了，虽然你的得分没到最高，但这就是测试的意义所在。',

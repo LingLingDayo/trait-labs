@@ -870,7 +870,7 @@ export const personalityTest: TestSuite = {
       id: 'protector',
       title: '庇护者',
       subtitle: 'The Protector',
-      emoji: '🫂',
+      emoji: '🤗',
       color: '#F48FB1',
       description: [
         '你有无私的一面，像一棵大树般为周围的人提供阴凉与保护。那些处于弱势或者需要帮助的人，总能在你这里找到温暖的避风港。',

@@ -585,7 +585,7 @@ export const chaosTest: TestSuite = {
       id: 'quietceo',
       title: '隐形CEO',
       subtitle: 'Quiet CEO',
-      emoji: '🥷',
+      emoji: '👔',
       color: '#6366F1',
       description: [
         '你不需要社交，你只需要结果。你话不多，事做得漂亮，能量自洽，不解释不表演。',
@@ -601,7 +601,7 @@ export const chaosTest: TestSuite = {
       id: 'allrounder',
       title: '万金油好人',
       subtitle: 'The All-Rounder',
-      emoji: '🧸',
+      emoji: '🎈',
       color: '#F9C846',
       description: [
         '你是那种哪里都能插，哪里都不算最强，但所有人都喜欢你的那种人。',
@@ -665,7 +665,7 @@ export const chaosTest: TestSuite = {
       id: 'giftedbuttired',
       title: '有才但懒',
       subtitle: 'Gifted but Unbothered',
-      emoji: '🦦',
+      emoji: '🐢',
       color: '#4ADE80',
       description: [
         '你有天赋，你有能力，你也有社交，问题是你就是……不太想使出来。不是做不到，是觉得没必要那么拼。',
@@ -874,7 +874,7 @@ export const chaosTest: TestSuite = {
       id: 'chillguy',
       title: '无害系路人',
       subtitle: 'The Chill Guy',
-      emoji: '🧃',
+      emoji: '🔋',
       color: '#86EFAC',
       description: [
         '你没什么特别大的问题，整体就是——过得去。不算最社牛，不算最废，不算最整顿，但所有场合你都能混进去。',
