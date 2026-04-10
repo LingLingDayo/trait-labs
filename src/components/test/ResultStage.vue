@@ -95,6 +95,23 @@ const onRestart = () => {
       </div>
     </Card>
 
+    <!-- 优势标签 -->
+    <div class="flex flex-wrap gap-2 py-1" v-if="result?.strengths?.length">
+      <div 
+        v-for="strength in result.strengths" 
+        :key="strength"
+        class="px-4 py-2 rounded-2xl text-sm font-bold shadow-sm border transition-all hover:shadow-md"
+        :style="{ 
+          backgroundColor: result.color + '08', 
+          borderColor: result.color + '20',
+          color: result.color 
+        }"
+      >
+        # {{ strength }}
+      </div>
+    </div>
+
+
     <!-- 维度数据 -->
     <Card padding="p-6" class="space-y-4">
       <h3 class="text-lg font-bold text-slate-800">维度得分</h3>
@@ -113,6 +130,27 @@ const onRestart = () => {
         </div>
       </div>
     </Card>
+
+    <!-- 核心建议 -->
+    <Card padding="p-6" class="space-y-4" v-if="result?.growthTips?.length">
+      <h3 class="text-lg font-bold text-slate-800">成长建议</h3>
+      <div class="space-y-3">
+        <div 
+          v-for="(tip, idx) in result.growthTips" 
+          :key="idx"
+          class="flex items-start gap-4 text-slate-600 text-sm leading-relaxed"
+        >
+          <div 
+            class="mt-0.5 w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-full text-[10px] font-bold text-white shadow-sm"
+            :style="{ backgroundColor: result.color }"
+          >
+            {{ idx + 1 }}
+          </div>
+          <p>{{ tip }}</p>
+        </div>
+      </div>
+    </Card>
+
 
     <!-- 底部按钮 -->
     <div class="pt-4 pb-8">
