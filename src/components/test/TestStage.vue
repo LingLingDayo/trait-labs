@@ -32,7 +32,7 @@ const onOptionSelect = (optionId: string) => {
     // 重置状态
     selectedOptionId.value = null
     isTransitioning.value = false
-  }, 400) // 延迟 400ms 喵
+  }, 400) // 延迟 400ms
 }
 
 const onBackHome = () => {
@@ -44,7 +44,7 @@ const onBackHome = () => {
 </script>
 
 <template>
-  <!-- 外层容器设为 100dvh 并锁定 hidden，禁止全局滚动 喵~ -->
+  <!-- 外层容器设为 100dvh 并锁定 hidden，禁止全局滚动 -->
   <div class="fixed inset-0 flex flex-col bg-slate-50 max-w-[480px] mx-auto overflow-hidden animate-slide-up">
     <!-- 顶部栏：返回按钮和进度条 -->
     <div class="px-6 pt-6 pb-2 flex items-center gap-4">
@@ -71,7 +71,7 @@ const onBackHome = () => {
       </div>
     </div>
 
-    <!-- 底部选项及导航区：单纯的白色背景，无抽屉效果 喵~ -->
+    <!-- 底部选项及导航区：单纯的白色背景，无抽屉效果 -->
     <div 
       v-if="!store.isFinished && store.currentQuestion" 
       class="w-full bg-transparent px-6 pt-4 pb-6 space-y-4"
