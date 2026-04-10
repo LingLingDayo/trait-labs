@@ -4,6 +4,7 @@ import Card from '../common/Card.vue'
 import ProgressBar from './ProgressBar.vue'
 import ConfirmDialog from '../common/ConfirmDialog.vue'
 import { useTestStore } from '../../stores/testStore'
+import type { QuestionOption } from '../../data/types'
 
 const emit = defineEmits(['complete', 'restart'])
 const store = useTestStore()
@@ -13,6 +14,48 @@ const selectedOptionId = ref<string | null>(null)
 // 锁定点击，防止重复触发
 const isTransitioning = ref(false)
 const showExitConfirm = ref(false)
+
+// 用于展示的选项列表（可能经过随机打乱）
+const displayOptions = ref<QuestionOption[]>([])
+
+// 模拟洗牌算法 (Fisher-Yates)
+function shuffle<T>(array: T[]): T[] {
+  const result = [...array]
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]]
+  }
+  return result
+}
+
+// 用于记录已生成的随机顺序，确保回看时顺序不变
+const optionsCache = ref<Record<string, QuestionOption[]>>({})
+
+// 切换题目时更新展示选项
+watch(() => store.currentIndex, () => {
+  const currentQ = store.currentQuestion
+  if (!currentQ) return
+  
+  // 1. 如果已有缓存顺序，直接使用
+  if (optionsCache.value[currentQ.id]) {
+    displayOptions.value = optionsCache.value[currentQ.id]
+    return
+  }
+
+  // 2. 否则根据配置生成顺序
+  if (store.testSuite?.randomizeOptions) {
+    const shuffled = shuffle(currentQ.options)
+    optionsCache.value[currentQ.id] = shuffled // 存入缓存
+    displayOptions.value = shuffled
+  } else {
+    displayOptions.value = currentQ.options
+  }
+}, { immediate: true })
+
+// 当测试 ID 变动（开始新测试或重置）时清空缓存
+watch(() => store.activeTestId, (id) => {
+  if (!id) optionsCache.value = {}
+})
 
 // 当回答完毕时触发 complete 事件
 watch(() => store.isFinished, (val) => {
@@ -83,7 +126,7 @@ const handleConfirmExit = () => {
           <!-- 底部选项区：随题目一起切换 -->
           <div class="w-full bg-transparent px-6 pt-4 pb-6 space-y-3">
             <Card 
-              v-for="option in store.currentQuestion.options" 
+              v-for="option in displayOptions" 
               :key="option.id"
               hoverable 
               padding="p-4" 
