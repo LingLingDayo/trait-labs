@@ -434,7 +434,7 @@ export const personalityTest: TestSuite = {
       title: '远见者',
       subtitle: 'The Visionary',
       emoji: '🔭',
-      color: '#6366f1',
+      color: '#A78BFA',
       description: [
         '你是一个天生的思想家，脑海中永远涌动着对未来的构想。你不满足于表面的现象，习惯于深挖本质、寻找规律，并将这些洞察转化为独到的愿景。',
         '你的创造力和前瞻性思维常常让身边的人叹为观止。你喜欢挑战常规，对那些"一直都是这样做的"答案感到不耐烦。',
@@ -450,7 +450,7 @@ export const personalityTest: TestSuite = {
       title: '指挥官',
       subtitle: 'The Commander',
       emoji: '⚔️',
-      color: '#ef4444',
+      color: '#FF8DA1',
       description: [
         '你天生具备领导气质，决断力强，行动力出众。你清楚地知道自己要什么，并有能力推动周围的人朝着目标前进。',
         '你不惧怕冲突，甚至认为适当的张力是激活团队的催化剂。你直接坦诚，不绕弯子，也因此赢得了许多人的尊重与信任。',
@@ -466,7 +466,7 @@ export const personalityTest: TestSuite = {
       title: '调和者',
       subtitle: 'The Mediator',
       emoji: '🕊️',
-      color: '#10b981',
+      color: '#B5EAD7',
       description: [
         '你有着与生俱来的共情能力，能够敏锐地感知他人的情绪，并以温柔而坚定的方式化解矛盾。在你所在的地方，人们往往能感受到一种安心与包容。',
         '你善于在不同立场之间搭建桥梁，让每一方都感到被尊重和理解。你的存在本身就是团队凝聚力的源泉。',
@@ -482,7 +482,7 @@ export const personalityTest: TestSuite = {
       title: '分析师',
       subtitle: 'The Analyst',
       emoji: '🔬',
-      color: '#3b82f6',
+      color: '#A2C2E1',
       description: [
         '你是一个追求精确与逻辑的人。面对任何问题，你都会本能地收集数据、梳理逻辑、建立模型。你享受将复杂事物抽丝剥茧后的那种清晰感。',
         '你有时会被人认为"冷静得有些冷淡"，但这恰恰是因为你相信理性是解决问题最有力的工具。你在专业领域往往能达到极高的深度。',
@@ -498,7 +498,7 @@ export const personalityTest: TestSuite = {
       title: '连接者',
       subtitle: 'The Connector',
       emoji: '🌟',
-      color: '#f59e0b',
+      color: '#FFDAC1',
       description: [
         '你是人际网络的天才，走到哪里都能自然而然地与人建立联结。你的社交能量具有感染力，能够激发他人的热情与参与感。',
         '你擅长发现每个人的闪光点，并将不同的人和资源串联起来，创造出意想不到的化学反应。你的价值往往不在于单打独斗，而在于居中协调。',
@@ -514,7 +514,7 @@ export const personalityTest: TestSuite = {
       title: '守护者',
       subtitle: 'The Guardian',
       emoji: '🛡️',
-      color: '#8b5cf6',
+      color: '#C7CEEA',
       description: [
         '你是可靠与稳定的象征，是那个在风雨来临时人们第一个想到的人。你对承诺极为认真，一旦答应的事就会全力以赴地完成。',
         '你有着极强的责任感和使命感，不仅保护自己在乎的人，也默默维护着团队的秩序与规范。你是组织正常运转的基石。',
@@ -530,7 +530,7 @@ export const personalityTest: TestSuite = {
       title: '探险家',
       subtitle: 'The Explorer',
       emoji: '🧭',
-      color: '#f97316',
+      color: '#E2F0CB',
       description: [
         '你生来就是运动的，拒绝一成不变。新的地方、新的面孔、新的挑战——这些都是让你眼睛发光的事物。你用亲身实践代替理论推演，在体验中积累智慧。',
         '你充满活力，乐观开朗，是团队中士气的天然来源。你能够在复杂的环境中快速适应，并找到意想不到的出路。',
@@ -546,7 +546,7 @@ export const personalityTest: TestSuite = {
       title: '哨兵',
       subtitle: 'The Sentinel',
       emoji: '🗼',
-      color: '#64748b',
+      color: '#96B1AC',
       description: [
         '你是秩序与规则的守护者，天生对风险保持高度敏感。你能在他人注意不到的地方察觉潜在的问题，并在灾难发生前就做好预防。',
         '你做事严谨，不喜欢依赖运气，更愿意通过充分的准备来掌控结果。你的存在让整个系统更加稳固可靠。',
@@ -562,7 +562,7 @@ export const personalityTest: TestSuite = {
       title: '理想主义者',
       subtitle: 'The Idealist',
       emoji: '✨',
-      color: '#ec4899',
+      color: '#FFD1DC',
       description: [
         '你相信世界可以变得更好，也愿意为此付出真实的努力。你对意义和价值的追求贯穿于生活的每一个选择，这让你的行为常常带有一股令人动容的真诚。',
         '你敏感而富有洞察力，能够感受到他人难以捕捉的微妙情绪，并将这些感受转化为深刻的表达。',
@@ -578,7 +578,7 @@ export const personalityTest: TestSuite = {
       title: '建筑师',
       subtitle: 'The Architect',
       emoji: '🏛️',
-      color: '#0ea5e9',
+      color: '#D0F0C0',
       description: [
         '你的世界是由逻辑、结构和系统搭建而成的。你看问题总能看到背后的框架，并本能地想要将其优化得更加精妙。你享受那种"把对的东西放在对的位置"的掌控感。',
         '你的规划能力和执行力堪称一流，能将模糊的愿景转化为精密的执行路线图。你的同事往往折服于你的系统性思维。',
@@ -594,7 +594,7 @@ export const personalityTest: TestSuite = {
       title: '共鸣者',
       subtitle: 'The Harmonizer',
       emoji: '🌊',
-      color: '#06b6d4',
+      color: '#B2E2F2',
       description: [
         '你有一种神奇的能力：走进任何一个房间，都能感受到那里情绪的流动，并自然而然地调节氛围，让所有人都感到舒适。',
         '你是链接人心的纽带，对情感的感知力极为精细。你的陪伴让人有一种"被完全接纳"的温暖感。',
@@ -610,7 +610,7 @@ export const personalityTest: TestSuite = {
       title: '战略家',
       subtitle: 'The Strategist',
       emoji: '♟️',
-      color: '#a855f7',
+      color: '#D4BBFF',
       description: [
         '你以几步之遥的眼光看待当下，总在下棋时就想好了下三步如何走。你对人性、局势和趋势有着敏锐的感知，并善于将这些洞察转化为精准的行动策略。',
         '你不怒而威，话不多但字字有分量。你善于在复杂博弈中找到最优解，让对手在不知不觉中按你设计的路线行进。',

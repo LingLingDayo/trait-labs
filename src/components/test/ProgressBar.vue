@@ -12,7 +12,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div class="w-full">
     <div class="flex justify-between items-end mb-2" v-if="showLabel">
-      <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Progress</span>
+      <span class="text-xs font-semibold text-slate-300 uppercase tracking-widest">Progress</span>
       <span class="text-sm font-bold text-primary-500">{{ Math.round(progress) }}%</span>
     </div>
     <div class="h-3 w-full bg-slate-100 rounded-full overflow-hidden">

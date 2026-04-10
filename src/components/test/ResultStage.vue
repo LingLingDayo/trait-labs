@@ -29,7 +29,7 @@ const onRestart = () => {
 </script>
 
 <template>
-  <div class="w-full h-full overflow-y-auto px-6 py-8 space-y-6 animate-slide-up bg-slate-50 relative">
+  <div class="w-full h-full overflow-y-auto px-6 py-8 space-y-6 animate-slide-up bg-transparent relative">
     <!-- 顶部操作栏 -->
     <div class="flex items-center">
       <button 
@@ -86,7 +86,7 @@ const onRestart = () => {
           <div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden relative">
             <div 
               class="h-full rounded-full transition-all duration-1000 absolute left-0 top-0"
-              :style="{ width: `${(item.score / item.maxScore) * 100}%`, backgroundColor: result?.color || '#3b82f6' }"
+              :style="{ width: `${(item.score / item.maxScore) * 100}%`, backgroundColor: result?.color || '#A78BFA' }"
             ></div>
           </div>
         </div>
@@ -97,7 +97,7 @@ const onRestart = () => {
     <div class="pt-4 pb-8">
       <button 
         class="w-full py-4 px-6 rounded-2xl text-white font-bold text-lg shadow-xl active:scale-95 transition-all"
-        :style="{ backgroundColor: result?.color || '#1e293b', boxShadow: `0 10px 25px -5px ${result?.color || '#1e293b'}40` }"
+        :style="{ backgroundColor: result?.color || '#A78BFA', boxShadow: `0 10px 25px -5px ${result?.color || '#A78BFA'}40` }"
         @click="onRestart"
       >
         再测一次

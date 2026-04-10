@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 antialiased overflow-hidden;
+    @apply bg-[#FDFBF7] text-slate-800 antialiased overflow-hidden;
     height: 100dvh;
     font-size: 16px;
     -webkit-tap-highlight-color: transparent;
@@ -37,10 +37,10 @@
   @apply bg-transparent;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-200 rounded-full;
+  @apply bg-primary-100 rounded-full;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-300;
+  @apply bg-primary-200;
 }
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
