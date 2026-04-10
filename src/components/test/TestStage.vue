@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import Card from '../common/Card.vue'
 import ProgressBar from './ProgressBar.vue'
+import ConfirmDialog from '../common/ConfirmDialog.vue'
 import { useTestStore } from '../../stores/testStore'
 
 const emit = defineEmits(['complete', 'restart'])
@@ -11,6 +12,7 @@ const store = useTestStore()
 const selectedOptionId = ref<string | null>(null)
 // 锁定点击，防止重复触发
 const isTransitioning = ref(false)
+const showExitConfirm = ref(false)
 
 // 当回答完毕时触发 complete 事件
 watch(() => store.isFinished, (val) => {
@@ -36,10 +38,12 @@ const onOptionSelect = (optionId: string) => {
 }
 
 const onBackHome = () => {
-  if (window.confirm('返回首页将清空当前答题进度，确定要返回吗？')) {
-    store.reset()
-    emit('restart')
-  }
+  showExitConfirm.value = true
+}
+
+const handleConfirmExit = () => {
+  store.reset()
+  emit('restart')
 }
 </script>
 
@@ -145,6 +149,16 @@ const onBackHome = () => {
         </button>
       </div>
     </div>
+
+    <!-- 退出确认弹窗 -->
+    <ConfirmDialog 
+      v-model:show="showExitConfirm"
+      title="确认离开？"
+      message="当前进度将不会保存，确定要返回首页吗？"
+      confirm-text="确定离开"
+      cancel-text="继续答题"
+      @confirm="handleConfirmExit"
+    />
   </div>
 </template>
 
