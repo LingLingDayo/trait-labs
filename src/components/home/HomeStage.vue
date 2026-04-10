@@ -1,19 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Button from '../common/Button.vue'
-import Card from '../common/Card.vue'
+import { TEST_REGISTRY } from '../../data'
 
 defineEmits(['start'])
 
-const baseTestTypes = [
-  { id: 'personality', name: '人格测试', title: '内在人格', desc: '基于大五人格与 MBTI 指标，为你提供专业、深度的自我洞察。' },
-  { id: 'psychological', name: '心理测试', title: '内心世界', desc: '通过科学严谨的心理测试量表，多维度地评估你的心理状态。' },
-  { id: 'career', name: '职业测试', title: '职业倾向', desc: '发掘你的核心优势与潜能，为你提供最专业的职业发展建议。' }
-]
-
-const testTypes = import.meta.env.DEV 
-  ? [{ id: 'debug', name: '开发测试', title: '开发调试', desc: '这是一个极简题库，用于快速验证功能与 UI 流程喵。' }, ...baseTestTypes]
-  : baseTestTypes
+const testTypes = TEST_REGISTRY.filter(suite => {
+  if (suite.id === 'debug') {
+    return import.meta.env.DEV
+  }
+  return true
+})
 
 const activeTestType = ref(testTypes[0])
 const scrollContainer = ref<HTMLElement | null>(null)
@@ -63,12 +60,12 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
       </div>
 
       <div class="space-y-4">
-        <h1 class="text-4xl font-extrabold text-slate-900 leading-tight">
-          探索真实的<br />
-          <span class="text-primary-500">{{ activeTestType.title }}</span>
-        </h1>
+        <h1 
+          class="text-4xl font-extrabold text-slate-900 leading-tight"
+          v-html="activeTestType.tagline"
+        ></h1>
         <p class="text-slate-500 text-lg max-w-[280px] mx-auto leading-relaxed">
-          {{ activeTestType.desc }}
+          {{ activeTestType.description }}
         </p>
       </div>
 

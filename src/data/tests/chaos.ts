@@ -12,7 +12,7 @@ import type { TestSuite } from '../types'
 export const chaosTest: TestSuite = {
   id: 'chaos',
   name: '灵魂测试',
-  tagline: '你到底是什么怪物？',
+  tagline: '你到底是哪种<br /><span class="text-primary-500">灵魂怪物？</span>',
   description: '40道灵魂拷问，带你直视真实的自己。本测试含有大量高浓度离谱题目，建议空腹或深夜时段进行。',
   estimatedMinutes: 6,
 

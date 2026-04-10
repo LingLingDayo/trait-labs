@@ -7,7 +7,7 @@ import type { TestSuite } from '../types'
 export const debugTest: TestSuite = {
   id: 'debug',
   name: '开发测试',
-  tagline: '开发者专用极简题库',
+  tagline: '进入开发者<br /><span class="text-primary-500">调试模式</span>',
   description: '这是一个用于快速验证 UI 和 逻辑全流程的小型题库，仅包含 2 道题目。',
   estimatedMinutes: 0.5,
 

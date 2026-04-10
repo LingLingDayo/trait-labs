@@ -9,7 +9,7 @@ import type { TestSuite } from '../types'
 export const personalityTest: TestSuite = {
   id: 'personality',
   name: '人格测试',
-  tagline: '探索真实的内在人格',
+  tagline: '探索真实的<br /><span class="text-primary-500">内在人格</span>',
   description: '基于大五人格 (OCEAN) 科学模型，通过 30 道精心设计的题目，为你绘制独一无二的人格图谱。',
   estimatedMinutes: 5,
 
