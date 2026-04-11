@@ -140,7 +140,7 @@ const onRestart = () => {
         <div v-for="item in radarData" :key="item.dimension" class="space-y-1">
           <div class="flex justify-between text-xs font-semibold text-slate-500">
             <span>{{ item.label }}</span>
-            <span>{{ Math.round(item.score) }} / {{ Math.round(item.maxScore) }}</span>
+            <span>{{ Math.round((item.score / item.maxScore) * 100) }}%</span>
           </div>
           <div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden relative">
             <div 
