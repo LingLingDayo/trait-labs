@@ -91,7 +91,7 @@ const onRestart = () => {
       </div>
 
       <div>
-        <h1 class="text-3xl font-extrabold" :style="{ color: result.color }">{{ result.title }}</h1>
+        <h1 class="text-3xl font-extrabold break-words" :style="{ color: result.color }">{{ result.title }}</h1>
         <p class="text-slate-500 font-medium mt-1">{{ result.subtitle }}</p>
         
         <!-- 稀有度标签 -->
@@ -112,7 +112,7 @@ const onRestart = () => {
     <Card padding="p-6" class="space-y-4">
       <h3 class="text-lg font-bold text-slate-800">人格解析</h3>
       <div class="space-y-2 text-slate-600 text-sm leading-relaxed">
-        <p v-for="(desc, idx) in result?.description" :key="idx">{{ desc }}</p>
+        <p v-for="(desc, idx) in result?.description" :key="idx" class="break-words">{{ desc }}</p>
       </div>
     </Card>
 
@@ -167,7 +167,7 @@ const onRestart = () => {
           >
             {{ idx + 1 }}
           </div>
-          <p>{{ tip }}</p>
+          <p class="break-words">{{ tip }}</p>
         </div>
       </div>
     </Card>
