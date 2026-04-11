@@ -292,7 +292,7 @@ export const chaosTest: TestSuite = {
     {
       id: 'c23',
       dimension: 'C',
-      text: '【非常重要的灵魂拷问】你的待办事项 App 里有多少未完成的事？',
+      text: '【灵魂拷问】你的待办事项 App 里有多少未完成的事？',
       options: [
         { id: 'c23a', label: '我没有待办 App，我脑子就是 App', scores: { C: 3 } },
         { id: 'c23b', label: '5条以内，全部可控', scores: { C: 4 } },
@@ -371,7 +371,7 @@ export const chaosTest: TestSuite = {
     {
       id: 'c30',
       dimension: 'E',
-      text: '【重量级灵魂拷问】你觉得自己是一个「累人」吗？',
+      text: '【灵魂拷问】你觉得自己是一个「累人」吗？',
       options: [
         { id: 'c30a', label: '不，我觉得我挺好相处的', scores: { E: 0 } },
         { id: 'c30b', label: '有时候可能会……但我在改', scores: { E: 2 } },
