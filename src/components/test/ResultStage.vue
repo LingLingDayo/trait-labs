@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useTestStore } from '../../stores/testStore'
+import { calculateRarities } from '../../utils/calculator'
 import Card from '../common/Card.vue'
 
 const emit = defineEmits(['restart'])
@@ -11,15 +12,30 @@ const result = computed(() => store.computedResult?.primaryResult)
 // 获取雷达图数据或维度得分
 const radarData = computed(() => store.computedResult?.radarData || [])
 
-// 根据ID一致性生成伪随机稀有度 (0.5% ~ 4.5%)
+// 获取全局稀有度分布图
+const rarityMap = computed(() => {
+  if (!store.testSuite) return {}
+  return calculateRarities(store.testSuite)
+})
+
+// 根据分布图获取当前结论的稀有度，并加一点点随机波动
 const rarityPercentage = computed(() => {
   if (!result.value?.id) return '1.0'
+  const baseRarity = rarityMap.value[result.value.id] || 1.0
+  
   let hash = 0
   for (let i = 0; i < result.value.id.length; i++) {
     hash = result.value.id.charCodeAt(i) + ((hash << 5) - hash)
   }
   hash = Math.abs(hash)
-  return (0.5 + (hash % 40) / 10).toFixed(1)
+  // factor 范围 0.95 ~ 1.05
+  const fluctuationFactor = 0.95 + (hash % 100) / 1000
+  
+  let finalRarity = baseRarity * fluctuationFactor
+  if (finalRarity < 0.01) finalRarity = 0.01
+  if (finalRarity > 99.9) finalRarity = 99.9
+  
+  return finalRarity < 1 ? finalRarity.toFixed(2) : finalRarity.toFixed(1)
 })
 
 // 动态稀有度文案
@@ -30,17 +46,17 @@ const displayRarityLabel = computed(() => {
   const idHash = result.value?.id ? result.value.id.length : 0
   
   const slogans = [
-    { t: 1.0, s: ['✨ 传说级存在', '✨ 万中无一', '✨ 申遗级别稀有', '✨ 绝世孤品', '✨ 外星人竟是你'] },
-    { t: 1.8, s: ['✨ 极度稀有', '✨ 千里挑一', '✨ 基因突变级罕见', '✨ 这种人格很难找', '✨ 独特的灵魂'] },
-    { t: 3.0, s: ['✨ 相当罕见', '✨ 百里挑一', '✨ 稀有品种', '✨ 独特样本', '✨ 罕见的人格特质'] },
-    { t: 5.0, s: ['✨ 挺特殊的', '✨ 少数派', '✨ 别具一格', '✨ 闪光点', '✨ 独特的分支'] }
+    { t: 2.0, s: ['✨ 传说级存在', '✨ 万中无一', '✨ 申遗级别稀有', '✨ 绝世孤品', '✨ 外星人竟是你'] },
+    { t: 8.0, s: ['✨ 极度稀有', '✨ 千里挑一', '✨ 基因突变级罕见', '✨ 这种人格很难找', '✨ 独特的灵魂'] },
+    { t: 25.0, s: ['✨ 相当罕见', '✨ 百里挑一', '✨ 稀有品种', '✨ 独特样本', '✨ 罕见的人格特质'] },
+    { t: 100.0, s: ['✨ 挺特殊的', '✨ 少数派', '✨ 别具一格', '✨ 闪光点', '✨ 独特的分支'] }
   ]
   
   const pool = slogans.find(s => p <= s.t)?.s || slogans[slogans.length - 1].s
   // 使用 hash 保证同一个结果文案固定
   const label = pool[idHash % pool.length]
   
-  return `${label}！全球仅有 ${rarityPercentage.value}% 的人是${result.value?.title}`
+  return `${label}！\n全球仅有 ${rarityPercentage.value}% 的人是${result.value?.title}`
 })
 
 // 获取图片路径
