@@ -79,7 +79,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
       <!-- Description Area -->
       <div class="w-full max-w-[380px]">
         <Transition name="fade-slide" mode="out-in">
-          <p :key="activeTestType.id" class="text-slate-500 text-base leading-relaxed text-left opacity-80 pl-1">
+          <p :key="activeTestType.id" class="flex flex-col justify-center text-slate-500 text-base leading-relaxed text-left opacity-80 pl-1 min-h-[4.875rem]">
             {{ activeTestType.description }}
           </p>
         </Transition>
@@ -90,7 +90,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
         <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">选择你的探索方向</span>
         <div 
           ref="scrollContainer"
-          class="flex gap-2 w-full max-w-[340px] overflow-x-auto py-3 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
+          class="flex gap-2 w-full max-w-[340px] overflow-x-auto py-5 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
         >
           <button 
             v-for="item in testTypes" 
