@@ -5,7 +5,7 @@ import type { TestSuite } from '../types'
 // 3 个维度:
 //   S (社牛指数)  : 社交能量 vs 社恐程度
 //   E (精神内耗度): 高=自我内耗满满 vs 低=活得相当明白
-//   C (整顿能力)  : 高=整顿达人 vs 低=被生活整顿
+//   C (行动掌控)  : 高=整顿达人 vs 低=被生活整顿
 // 27 种结论: 由各维度分数区间组合推导
 // ───────────────────────────────────────────────
 
@@ -34,7 +34,7 @@ export const chaosTest: TestSuite = {
     },
     {
       key: 'C',
-      label: '整顿能力',
+      label: '行动掌控',
       description: '你是整顿别人还是被生活整顿',
       lowLabel: '被整顿体质',
       highLabel: '整顿大师'
@@ -233,7 +233,7 @@ export const chaosTest: TestSuite = {
       ]
     },
 
-    // ── 整顿能力 (C) ──
+    // ── 行动掌控 (C) ──
     {
       id: 'c18',
       dimension: 'C',
