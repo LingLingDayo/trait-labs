@@ -45,55 +45,69 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
 </script>
 
 <template>
-  <div class="flex-1 min-h-0 w-full flex flex-col px-6 pt-4 pb-12 animate-slide-up overflow-y-auto overflow-x-hidden scrollbar-hide safe-area-bottom">
-    <!-- Hero Section -->
-    <div class="flex-1 flex flex-col items-center justify-center text-center space-y-4">
-      <!-- 英雄图容器：增加背景色平滑过渡 -->
-      <div 
-        class="relative w-full aspect-square max-w-[280px] rounded-[32px] overflow-hidden shadow-premium group transition-colors duration-700"
-        :class="typeThemes[activeTestType.id] || 'bg-white'"
-      >
-        <img 
-          src="../../assets/images/hero.jpg" 
-          alt="Mysterious Minimalist Tree" 
-          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-        />
-      </div>
-
-      <!-- Test Types Selector -->
-      <div 
-        ref="scrollContainer"
-        class="flex gap-2 w-full max-w-[320px] overflow-x-auto py-4 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
-      >
-        <button 
-          v-for="item in testTypes" 
-          :key="item.id"
-          @click="selectType($event, item)"
-          class="flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 whitespace-nowrap"
-          :class="activeTestType.id === item.id ? 'bg-primary-500 text-white shadow-lg scale-105' : 'bg-white/60 text-slate-400 hover:bg-white hover:text-slate-600 shadow-sm'"
+  <div class="flex-1 min-h-0 w-full flex flex-col px-6 py-10 animate-slide-up overflow-y-auto overflow-x-hidden scrollbar-hide safe-area-bottom">
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col items-center justify-center space-y-8 py-2">
+      
+      <!-- Top Section: Logo/Hero + Title side by side -->
+      <div class="w-full max-w-[380px] flex items-center gap-6">
+        <!-- 英雄图容器：缩小并移动到侧边，增加持续摆动动画 -->
+        <div 
+          class="relative flex-shrink-0 w-32 h-32 rounded-3xl overflow-hidden shadow-premium transition-colors duration-700 animate-sway-float"
+          :class="typeThemes[activeTestType.id] || 'bg-white'"
         >
-          {{ item.name }}
-        </button>
+          <img 
+            src="../../assets/images/hero.jpg" 
+            alt="Hero Image" 
+            class="w-full h-full object-cover" 
+          />
+        </div>
+
+        <!-- Title Section: 使用 flex-1 稳固空间，防止内容切换导致整体宽度波动抖动喵~ -->
+        <div class="flex-1 min-w-0 flex flex-col justify-center">
+          <Transition name="fade-slide" mode="out-in">
+            <h1 
+              :key="activeTestType.id"
+              class="text-3xl font-black text-slate-900 leading-tight text-left"
+              v-html="activeTestType.tagline"
+            >
+            </h1>
+          </Transition>
+        </div>
       </div>
 
-      <div class="w-full max-w-[320px]">
+      <!-- Description Area -->
+      <div class="w-full max-w-[380px]">
         <Transition name="fade-slide" mode="out-in">
-          <div :key="activeTestType.id" class="space-y-4">
-            <h1 
-              class="text-4xl font-extrabold text-slate-900 leading-tight min-h-[4.5rem] flex items-center justify-center whitespace-nowrap"
-            >
-              <span v-html="activeTestType.tagline"></span>
-            </h1>
-            <p class="text-slate-500 text-lg max-w-[280px] mx-auto leading-relaxed">
-              {{ activeTestType.description }}
-            </p>
-          </div>
+          <p :key="activeTestType.id" class="text-slate-500 text-base leading-relaxed text-left opacity-80 pl-1">
+            {{ activeTestType.description }}
+          </p>
         </Transition>
       </div>
 
-      <div class="w-full max-w-[300px] pt-1">
-        <Button size="xl" class="w-full" @click="$emit('start', activeTestType.id)">
-          立即开始测试
+      <!-- Test Types Selector: Keep centered -->
+      <div class="w-full flex flex-col items-center space-y-2">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">选择你的探索方向</span>
+        <div 
+          ref="scrollContainer"
+          class="flex gap-2 w-full max-w-[340px] overflow-x-auto py-3 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
+        >
+          <button 
+            v-for="item in testTypes" 
+            :key="item.id"
+            @click="selectType($event, item)"
+            class="flex-shrink-0 px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 whitespace-nowrap"
+            :class="activeTestType.id === item.id ? 'bg-primary-500 text-white shadow-lg scale-105' : 'bg-white/60 text-slate-400 hover:bg-white hover:text-slate-600 shadow-sm'"
+          >
+            {{ item.name }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="w-full max-w-[320px] pt-2">
+        <Button size="xl" class="w-full shadow-premium-hover" @click="$emit('start', activeTestType.id)">
+          立即开启探索
         </Button>
       </div>
     </div>
@@ -101,35 +115,49 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
 </template>
 
 <style scoped>
+/* 核心漂浮摆动动画 */
+@keyframes sway-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.animate-sway-float {
+  animation: sway-float 4s ease-in-out infinite;
+}
+
 /* 内容切换动画 */
 .fade-slide-enter-active {
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .fade-slide-leave-active {
-  transition: all 0.3s cubic-bezier(0.5, 0, 0.75, 0);
+  transition: all 0.2s cubic-bezier(0.5, 0, 0.75, 0);
 }
 .fade-slide-enter-from {
   opacity: 0;
-  transform: translateY(16px) scale(0.98);
+  transform: translateX(10px);
 }
 .fade-slide-leave-to {
   opacity: 0;
-  transform: translateY(-16px) scale(0.98);
+  transform: translateX(-10px);
 }
 
 .mask-fade-horizontal {
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 15%,
+    black 85%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 15%,
+    black 85%,
     transparent 100%
   );
 }
