@@ -13,7 +13,7 @@ export const chaosTest: TestSuite = {
   id: 'chaos',
   name: '灵魂测试',
   tagline: '你到底是哪种<br /><span class="text-primary-500">灵魂怪物？</span>',
-  description: '40道真相捕捉，深挖那些连你都不愿承认的本能。本测试包含大量“扎心”的真实元素，请做好心理准备。',
+  description: '40道灵魂拷问，深挖那些连你都不愿承认的本能。本测试包含大量“扎心”的真实元素，请做好心理准备。',
   estimatedMinutes: 6,
   randomizeOptions: true,
 
