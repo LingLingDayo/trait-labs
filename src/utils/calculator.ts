@@ -130,11 +130,54 @@ export function analyzeTestResult(
   matches.sort((a, b) => b.matchRate - a.matchRate)
 
   const primaryResult = matches.length > 0 ? matches[0].result : null
-
+  
   return {
     dimensionScores,
     radarData,
     matches,
     primaryResult
   }
+}
+
+/**
+ * 根据每个结论的触发条件（matchRules）在整体分数域中的偏离度，
+ * 计算出各结论的理论稀有度分布百分比
+ */
+export function calculateRarities(testSuite: TestSuite): Record<string, number> {
+  const maxScores = calculateMaxPossibleScores(testSuite)
+  const weights: Record<string, number> = {}
+  let totalWeight = 0
+
+  testSuite.results.forEach(result => {
+    let difficultyScore = 0
+    let ruleCount = 0
+
+    // 计算达成该结论的难度系数 (距离中位数的偏离度)
+    for (const [dimKey, reqScore] of Object.entries(result.matchRules)) {
+      const maxScore = maxScores[dimKey] || 1
+      // reqRatio 为 0~1 的比例
+      const reqRatio = reqScore / maxScore
+      // bias: 相对于中位数 0.5 的偏离率 (0 ~ 1)
+      const bias = Math.abs(reqRatio - 0.5) / 0.5
+      difficultyScore += bias * bias
+      ruleCount++
+    }
+
+    // 使用指数衰减模拟正态分布，sigma = 0.8 用来调整陡峭程度
+    // 如果没有条件规则(保底结论)，难度偏离就是 0，权重最大(1.0)
+    // 偏离越大，权重越低，表示概率越小
+    const sigma = 0.8
+    const weight = Math.exp(-difficultyScore / sigma)
+    
+    weights[result.id] = weight
+    totalWeight += weight
+  })
+
+  // 归一化为百分比
+  const rarities: Record<string, number> = {}
+  for (const [id, weight] of Object.entries(weights)) {
+    rarities[id] = (weight / totalWeight) * 100
+  }
+
+  return rarities
 }
