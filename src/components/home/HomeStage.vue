@@ -12,7 +12,7 @@ const testTypes = TEST_REGISTRY.filter(suite => {
   return true
 })
 
-const activeTestType = ref(testTypes[0])
+const activeTestType = ref(testTypes[1] || testTypes[0])
 const scrollContainer = ref<HTMLElement | null>(null)
 
 // 各测试类型的视觉主题色映射
