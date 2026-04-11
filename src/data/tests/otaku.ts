@@ -55,7 +55,8 @@ export const otakuTest: TestSuite = {
       options: [
         { id: 'a', label: '“是我此生不变的信仰！” (自带BGM)', scores: { OLD: 3, OTAKU: 3 } },
         { id: 'b', label: '“皮卡丘，十万伏特！”', scores: { NORMIE: 1, OLD: 1 } },
-        { id: 'c', label: '“物理实验做多了吧？”', scores: { NORMIE: 3 } }
+        { id: 'c', label: '“物理实验做多了吧？”', scores: { NORMIE: 3 } },
+        { id: 'd', label: '“唯我超电磁炮永世长存！”', scores: { OLD: 2, OTAKU: 2 } }
       ]
     },
     {
@@ -74,7 +75,7 @@ export const otakuTest: TestSuite = {
       dimension: 'NEW',
       options: [
         { id: 'a', label: '毫无感觉，以为是谁脸滚了键盘。', scores: { NORMIE: 3 } },
-        { id: 'b', label: '脑内瞬间开始魔音循环并想跟着跳舞。', scores: { NEW: 3, OTAKU: 2 } }
+        { id: 'b', label: '脑内瞬间开始魔音循环并想跟着跳舞。', scores: { NEW: 3, OTAKU: 2 } },
       ]
     },
     {
@@ -84,7 +85,8 @@ export const otakuTest: TestSuite = {
       options: [
         { id: 'a', label: '完了，他马上就要变成“2.5条悟”了。', scores: { NEW: 3, OTAKU: 2 } },
         { id: 'b', label: '连一刻都没有为他哀悼，立刻赶赴战场的是...', scores: { NEW: 3, OTAKU: 3 } },
-        { id: 'c', label: '太棒了，他真有斗志！', scores: { NORMIE: 3 } }
+        { id: 'c', label: '太棒了，他真有斗志！', scores: { NORMIE: 3 } },
+        { id: 'd', label: '“立这种Flag，下一秒该不会要切入回忆杀了吧？”', scores: { NEW: 2, OTAKU: 2 } }
       ]
     },
     {
@@ -93,12 +95,14 @@ export const otakuTest: TestSuite = {
       dimension: 'OLD',
       options: [
         { id: 'a', label: '“蝉在叫，人坏掉。”', scores: { OLD: 4, OTAKU: 3 } },
-        { id: 'b', label: '“好热啊，今年夏天真难熬。”', scores: { NORMIE: 3 } }
+        { id: 'b', label: '“这就是传说中的‘无尽八月’吗……这一幕我见过。”', scores: { OLD: 4, OTAKU: 2 } },
+        { id: 'c', label: '“好热啊，今年夏天真难熬。”', scores: { NORMIE: 3 } },
+        { id: 'd', label: '“想起那个在乡下度过的悠闲夏天了。”', scores: { NORMIE: 2, OLD: 1 } }
       ]
     },
     {
       id: 'q7',
-      text: '如果在排练室有人突然喊了一句：“为什么春日影要演奏春日影！”',
+      text: '如果在排练室有人突然喊了一句：“为什么要演奏春日影！”',
       dimension: 'NEW',
       options: [
         { id: 'a', label: '“因为大家要一辈子在一起啊！”', scores: { NEW: 3, OTAKU: 3 } },
@@ -123,8 +127,9 @@ export const otakuTest: TestSuite = {
       dimension: 'NEW',
       options: [
         { id: 'a', label: '“太可怕了，快跑！”', scores: { NORMIE: 2 } },
-        { id: 'b', label: '“打倒它掉落什么材料？”', scores: { NORMIE: 1, OLD: 1 } },
-        { id: 'c', label: '“魔物就应该被做成美味的食物！”', scores: { NEW: 3, OTAKU: 2 } }
+        { id: 'b', label: '“魔物就应该被做成美味的食物！”', scores: { NEW: 3, OTAKU: 2 } },
+        { id: 'c', label: '“打倒它掉落什么材料？”', scores: { NORMIE: 1, OLD: 1 } },
+        { id: 'd', label: '“如果是莱欧斯的话，现在已经在流口水了吧。”', scores: { NEW: 3, OTAKU: 3 } }
       ]
     },
     {
@@ -132,7 +137,7 @@ export const otakuTest: TestSuite = {
       text: '别人问你借东西，你完全不想借，最嚣张的回绝方式是：',
       dimension: 'OTAKU',
       options: [
-        { id: 'a', label: '“达嘎，口头哇路！” (JOJO立)', scores: { OLD: 2, OTAKU: 4 } },
+        { id: 'a', label: '“达嘎，口头哇路！” (并摆出极具张力的姿势)', scores: { OLD: 2, OTAKU: 4 } },
         { id: 'b', label: '“真不巧，我也要用。”', scores: { NORMIE: 3 } },
         { id: 'c', label: '“谎言是最大的爱哦，我就假装借你了吧~”', scores: { NEW: 2, OTAKU: 2 } }
       ]
@@ -142,7 +147,7 @@ export const otakuTest: TestSuite = {
       text: '去球场打球，看到教练走过来，你忍不住想喊：',
       dimension: 'OLD',
       options: [
-        { id: 'a', label: '“教练，我想打篮球。”', scores: { OLD: 3, NORMIE: 1 } },
+        { id: 'a', label: '“教练，我想打篮球。”', scores: { OLD: 2, NORMIE: 1 } },
         { id: 'b', label: '“教练，好久不见。”', scores: { NORMIE: 3 } },
         { id: 'c', label: '“来一场赌上灵魂的决斗吧！”', scores: { OTAKU: 3, OLD: 1 } }
       ]
@@ -154,7 +159,8 @@ export const otakuTest: TestSuite = {
       options: [
         { id: 'a', label: '“可恶，这是替身攻击！”', scores: { OLD: 2, OTAKU: 3 } },
         { id: 'b', label: '“是谁把石头扔这里的，太没素质了。”', scores: { NORMIE: 3 } },
-        { id: 'c', label: '“希望之花，连结着我们的羁绊~（顺势躺平）”', scores: { OLD: 2, OTAKU: 4 } }
+        { id: 'c', label: '“希望之花，连结着我们的羁绊~（顺势躺平）”', scores: { OLD: 2, OTAKU: 4 } },
+        { id: 'd', label: '“不要停下来啊……（指摔倒了也要往前爬）”', scores: { OLD: 4, OTAKU: 3 } }
       ]
     },
     {
@@ -183,7 +189,9 @@ export const otakuTest: TestSuite = {
       dimension: 'OLD',
       options: [
         { id: 'a', label: '迅速算出993。', scores: { NORMIE: 3 } },
-        { id: 'b', label: '默默掰响手指，眼神变冷。', scores: { OLD: 3, OTAKU: 3 } }
+        { id: 'b', label: '默默掰响手指，眼神变冷。', scores: { OLD: 3, OTAKU: 3 } },
+        { id: 'c', label: '“1000减7等于几？你见过我的赫子吗？”', scores: { OLD: 3, OTAKU: 2 } },
+        { id: 'd', label: '“这是在做口算练习吗？小学生题目。”', scores: { NORMIE: 2 } }
       ]
     },
     {
@@ -201,9 +209,9 @@ export const otakuTest: TestSuite = {
       text: '别人问你最喜欢的颜色是什么：',
       dimension: 'OTAKU',
       options: [
-        { id: 'a', label: '“蓝白碗的颜色。”', scores: { OTAKU: 3, OLD: 2 } },
-        { id: 'b', label: '“初音绿 / 葱色！”', scores: { OLD: 2, OTAKU: 2 } },
-        { id: 'c', label: '蓝色、黑色或白色。', scores: { NORMIE: 3 } }
+        { id: 'a', label: '“初号机的紫色！”', scores: { OTAKU: 3, OLD: 2 } },
+        { id: 'b', label: '“葱色！”', scores: { OLD: 2, OTAKU: 2 } },
+        { id: 'c', label: '“粉色、黄色或黑色。”', scores: { NORMIE: 3 } }
       ]
     },
     {
@@ -222,7 +230,7 @@ export const otakuTest: TestSuite = {
       dimension: 'OLD',
       options: [
         { id: 'a', label: '“邪王真眼是最强的！” / 火影结印起手式。', scores: { OLD: 3, OTAKU: 3 } },
-        { id: 'b', label: '“领域展开！”', scores: { NEW: 3, NORMIE: 1 } },
+        { id: 'b', label: '“领域展开！”', scores: { NEW: 3, NORMIE: 2 } },
         { id: 'c', label: '眼睛进沙子了，手抽筋了。', scores: { NORMIE: 3 } }
       ]
     },
@@ -232,7 +240,9 @@ export const otakuTest: TestSuite = {
       dimension: 'OLD',
       options: [
         { id: 'a', label: '心生怜爱，想给她买糖。', scores: { NORMIE: 3 } },
-        { id: 'b', label: '立刻联想到合成兽，PTSD发作，痛苦抱头。', scores: { OLD: 4, OTAKU: 3 } }
+        { id: 'b', label: 'PTSD发作，痛苦抱头。', scores: { OLD: 4, OTAKU: 3 } },
+        { id: 'c', label: '“爱德华……大哥哥……（声音颤抖）”', scores: { OLD: 5, OTAKU: 4 } },
+        { id: 'd', label: '“是在求我帮她拿高处的东西吗？真是个有礼貌的孩子。”', scores: { NORMIE: 3 } }
       ]
     },
     {
@@ -251,7 +261,9 @@ export const otakuTest: TestSuite = {
       dimension: 'OLD',
       options: [
         { id: 'a', label: '感到极度震惊并认为对方有病。', scores: { NORMIE: 3 } },
-        { id: 'b', label: '发射超电磁炮警告！翻译出来挨打！', scores: { OLD: 3, OTAKU: 3 } }
+        { id: 'b', label: '“你这家伙……是想吃一记超电磁炮吗？”', scores: { OLD: 3, OTAKU: 3 } },
+        { id: 'c', label: '“这种要求我这辈子都没听过，那你来吧。”', scores: { NORMIE: 2 } },
+        { id: 'd', label: '“这又是哪个勇敢的字幕组在‘信达雅’了？”', scores: { OLD: 2, OTAKU: 2 } }
       ]
     },
     {
@@ -260,7 +272,7 @@ export const otakuTest: TestSuite = {
       dimension: 'NEW',
       options: [
         { id: 'a', label: '《残酷天使的行动纲领》或《Butter-Fly》。', scores: { OLD: 3, OTAKU: 2 } },
-        { id: 'b', label: '《Idol》(我推) 或 《Bling-Bang-Bang-Born》(马修)。', scores: { NEW: 3, NORMIE: 1 } },
+        { id: 'b', label: '《Idol》 或 《Bling-Bang-Bang-Born》。', scores: { NEW: 3, NORMIE: 1 } },
         { id: 'c', label: '各种华语流行金曲。', scores: { NORMIE: 3 } },
         { id: 'd', label: '《春日影》，然后开始哭。', scores: { NEW: 3, OTAKU: 3 } }
       ]
@@ -271,7 +283,9 @@ export const otakuTest: TestSuite = {
       dimension: 'OTAKU',
       options: [
         { id: 'a', label: '就是俩普通的哥们。', scores: { NORMIE: 3 } },
-        { id: 'b', label: '“究竟谁是1谁是0...”在脑内瞬间分好攻受。', scores: { OTAKU: 4 } }
+        { id: 'b', label: '“究竟谁是1谁是0...”在脑内瞬间分好攻受。', scores: { OTAKU: 4 } },
+        { id: 'c', label: '“这大概就是青春热血的友情吧，真不错啊。”', scores: { NORMIE: 2 } },
+        { id: 'd', label: '“这两个人的化学反应……CP感已经溢出屏幕了！”', scores: { OTAKU: 3 } }
       ]
     },
     {
@@ -279,8 +293,9 @@ export const otakuTest: TestSuite = {
       text: '一首极其带感的爵士乐响起，你脑海中浮现出：',
       dimension: 'OLD',
       options: [
-        { id: 'a', label: '星际牛仔 (Cowboy Bebop) 或者 永生之酒。', scores: { OLD: 4, OTAKU: 3 } },
-        { id: 'b', label: '感觉到了高雅的西餐厅。', scores: { NORMIE: 3 } }
+        { id: 'a', label: '星际牛仔 或者 永生之酒。', scores: { OLD: 4, OTAKU: 3 } },
+        { id: 'b', label: '“See You Space Cowboy...”', scores: { OLD: 3, OTAKU: 2 } },
+        { id: 'c', label: '感觉到了高雅的西餐厅。', scores: { NORMIE: 3 } },
       ]
     },
     {
@@ -289,7 +304,9 @@ export const otakuTest: TestSuite = {
       dimension: 'NEW',
       options: [
         { id: 'a', label: '单纯表达开心，无其他含义。', scores: { NORMIE: 3 } },
-        { id: 'b', label: '潜台词：终于不用再做坏女人的狗了。', scores: { NEW: 4, OTAKU: 2 } }
+        { id: 'b', label: '潜台词：终于不用再做坏女人的狗了。', scores: { NEW: 4, OTAKU: 2 } },
+        { id: 'c', label: '“波奇塔，我们要一起活下去啊！”', scores: { NEW: 2, OTAKU: 2 } },
+        { id: 'd', label: '“是某种网络狂欢的后缀吗？年轻人真会玩。”', scores: { NORMIE: 1 } }
       ]
     },
     {
@@ -298,7 +315,9 @@ export const otakuTest: TestSuite = {
       dimension: 'OLD',
       options: [
         { id: 'a', label: '联想到戴着战力探测器的拉蒂兹。', scores: { OLD: 3, OTAKU: 2 } },
-        { id: 'b', label: '这不就是互联网常用怼人语录吗？', scores: { NORMIE: 2 } }
+        { id: 'b', label: '“我竟然还记得那个拿猎枪的农夫大叔……”', scores: { OLD: 4, OTAKU: 3 } },
+        { id: 'c', label: '这不就是互联网常用怼人语录吗？', scores: { NORMIE: 2 } },
+        { id: 'd', label: '“比起这个，我更在意那颗龙珠在哪。”', scores: { NORMIE: 1, OLD: 1 } }
       ]
     },
     {
@@ -307,7 +326,8 @@ export const otakuTest: TestSuite = {
       dimension: 'OLD',
       options: [
         { id: 'a', label: '就是勇气的赞歌！', scores: { OLD: 3, OTAKU: 3 } },
-        { id: 'b', label: '历史发展的必然？', scores: { NORMIE: 3 } }
+        { id: 'b', label: '历史发展的必然？', scores: { NORMIE: 3 } },
+        { id: 'c', label: '“这是在考历史还是政治？”', scores: { NORMIE: 3 } }
       ]
     },
     {
@@ -316,7 +336,8 @@ export const otakuTest: TestSuite = {
       dimension: 'OLD',
       options: [
         { id: 'a', label: '“雪霁天晴朗...”', scores: { NORMIE: 3 } },
-        { id: 'b', label: '“届不到的爱恋...” (White Album 2)', scores: { OLD: 3, OTAKU: 4 } }
+        { id: 'b', label: '“为什么你这么熟练啊！”', scores: { OLD: 3, OTAKU: 4 } },
+        { id: 'c', label: '“秒速5厘米……那是樱花落下的速度吧。”', scores: { NORMIE: 1, OLD: 1, OTAKU: 1 } }
       ]
     },
     {
@@ -344,7 +365,7 @@ export const otakuTest: TestSuite = {
       color: '#8b5cf6',
       strengths: ['亚文化活化石', '万物皆可萌', '极意玩梗大师'],
       growthTips: ['多出去呼吸一下三次元的空气', '试着对圈外的朋友宽容一些，不要轻易发动替身攻击'],
-      matchRules: { OTAKU: 86 },
+      matchRules: { OTAKU: 85 },
       rarityLabel: '🛰️ 纯度爆表！你的DNA里刻满了禁忌的代码'
     },
     {
@@ -360,7 +381,7 @@ export const otakuTest: TestSuite = {
       color: '#d97706',
       strengths: ['情怀拉满', '品味老辣且独到', '如数家珍的百科全书'],
       growthTips: ['不要因为画风就拒绝新时代的好作品', '可以适当了解一下现在的推子们都在玩什么'],
-      matchRules: { OLD: 57 },
+      matchRules: { OLD: 55 },
       rarityLabel: '🏺 时代的残党！建议作为二次元非遗进行保护'
     },
     {
@@ -392,7 +413,7 @@ export const otakuTest: TestSuite = {
       color: '#10b981',
       strengths: ['身心异常健康', '完美融入现实社会', '情绪管理大师'],
       growthTips: ['其实某些时候发发神经也挺减压的', '无聊时找部口碑神作试着入坑吧，也许会发现新世界'],
-      matchRules: { NORMIE: 81 },
+      matchRules: { NORMIE: 75 },
       rarityLabel: '🏙️ 极度稀缺的正常人！在这个满是怪胎的圈子里你最独特'
     },
     {
