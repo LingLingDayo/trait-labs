@@ -532,7 +532,7 @@ export const nonsenseTest: TestSuite = {
       title: '正常人类',
       subtitle: 'Suspiciously Normal',
       emoji: '🧑',
-      color: '#D1D5DB',
+      color: '#c9cbcf',
       description: [
         '我们的算法发现你……相当正常。这在我们的数据库里是一个罕见的结论。',
         '你是一个谜，但方向相反——因为你太正常了，这本身就很奇怪。'
