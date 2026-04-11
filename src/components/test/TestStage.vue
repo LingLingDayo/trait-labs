@@ -117,7 +117,7 @@ const handleConfirmExit = () => {
           <!-- 中间题目内容区：flex-1 并允许内部滚动以防长文本，居中展示 -->
           <div class="flex-1 flex flex-col justify-center px-6 overflow-y-auto scrollbar-hide">
             <div class="py-4">
-              <h2 class="text-2xl font-bold text-slate-800 leading-tight">
+              <h2 class="text-2xl font-bold text-slate-800 leading-tight break-words">
                 {{ store.currentQuestion.text }}
               </h2>
             </div>
@@ -152,7 +152,7 @@ const handleConfirmExit = () => {
                   </Transition>
                 </div>
                 <span 
-                  class="font-medium transition-colors duration-300"
+                  class="font-medium transition-colors duration-300 break-words"
                   :class="(selectedOptionId || store.answers[store.currentQuestion.id]) === option.id ? 'text-primary-800' : 'text-slate-700'"
                 >
                   {{ option.label }}
