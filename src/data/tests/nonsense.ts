@@ -381,8 +381,8 @@ export const nonsenseTest: TestSuite = {
       emoji: {
         layers: [
           { id: 'Melting face' },
-          { id: 'Alien monster', scale: 0.5, x: 50, y: 40, rotate: 15 },
-          { id: 'Glowing star', scale: 0.3, x: 10, y: 10 }
+          { id: 'Alien monster', scale: 0.45, x: 45, y: 30, rotate: 10 },
+          { id: 'Glowing star', scale: 0.25, x: -55, y: -35, animation: 'pulse' }
         ]
       },
       color: '#10B981',
@@ -400,7 +400,12 @@ export const nonsenseTest: TestSuite = {
       id: 'walkingprose',
       title: '人形散文诗',
       subtitle: 'Meaningless but Beautiful',
-      emoji: '📜',
+      emoji: {
+        layers: [
+          { id: 'Scroll', rotate: -10 },
+          { id: 'Feather', scale: 0.6, x: 30, y: -30, rotate: 30 }
+        ]
+      },
       color: '#F472B6',
       description: [
         '你整个人就是一首华丽但不知所云的散文诗。别人靠近你，会感受到强烈的艺术气息和氛围感。',
@@ -415,7 +420,12 @@ export const nonsenseTest: TestSuite = {
       id: 'cosmicdeadwood',
       title: '宇宙级废柴',
       subtitle: 'Olympic-level Slacker',
-      emoji: '🏅',
+      emoji: {
+        layers: [
+          { id: '1st place medal', scale: 0.9 },
+          { id: 'Zzz', scale: 0.5, x: 35, y: -45 }
+        ]
+      },
       color: '#92400E',
       description: [
         '如果摆烂是一项奥运项目，你已经拿到了金牌，并且在领奖台上睡着了。颁奖音乐响起，你仍未出现。',
@@ -431,7 +441,12 @@ export const nonsenseTest: TestSuite = {
       id: 'logicblackhole',
       title: '逻辑黑洞',
       subtitle: 'Logic Destroyer',
-      emoji: '🕳️',
+      emoji: {
+        layers: [
+          { id: 'Hole' },
+          { id: 'Cyclone', scale: 0.8, x: 0, y: 0, animation: 'spin' }
+        ]
+      },
       color: '#312E81',
       description: [
         '你不是在思考，你是在瓦解这个世界的因果律。你的大脑跑着一套没有文档的底层逻辑，连你自己也不一定能读得懂。',
@@ -449,8 +464,8 @@ export const nonsenseTest: TestSuite = {
       subtitle: 'Superposition of Slacking',
       emoji: {
         layers: [
-          { id: 'Package' },
-          { id: 'Cat face', scale: 0.5, x: 25, y: -15, rotate: -5 }
+          { id: 'Package', rotate: -5 },
+          { id: 'Cat face', scale: 0.6, x: 25, y: -35, rotate: 15 }
         ]
       },
       color: '#8B5CF6',
@@ -467,7 +482,12 @@ export const nonsenseTest: TestSuite = {
       id: 'cyberplant',
       title: '赛博盆栽',
       subtitle: 'Needs Wi-Fi and Compliments',
-      emoji: '🌵',
+      emoji: {
+        layers: [
+          { id: 'Cactus', scale: 0.9 },
+          { id: 'Laptop', scale: 0.5, x: 40, y: 40 }
+        ]
+      },
       color: '#059669',
       description: [
         '你把自己稳稳地种在了一个赛博花盆里。你不想移动，也不太想进行现实里的光合作用，岁月静好是你最大的追求。',
@@ -483,7 +503,12 @@ export const nonsenseTest: TestSuite = {
       id: 'cosmicweirdo',
       title: '宇宙怪人',
       subtitle: 'Certified Cosmic Weirdo',
-      emoji: '🌌',
+      emoji: {
+        layers: [
+          { id: 'Alien', scale: 0.9 },
+          { id: 'Rocket', scale: 0.5, x: 55, y: -25, rotate: 15, animation: 'pulse' }
+        ]
+      },
       color: '#C4B5FD',
       description: [
         '恭喜你，科学解释不了你。你的思维方式对大多数人来说是一种特殊的频率。',
@@ -498,7 +523,12 @@ export const nonsenseTest: TestSuite = {
       id: 'minimafia',
       title: '微型黑社会老大',
       subtitle: 'Ruling the Bacteria',
-      emoji: '🕶️',
+      emoji: {
+        layers: [
+          { id: 'Sunglasses', scale: 0.9 },
+          { id: 'Gem stone', scale: 0.5, x: -35, y: 35 }
+        ]
+      },
       color: '#B91C1C',
       description: [
         '你有一种莫名的统御力和大佬气质，但非常遗憾，这种气质只对非常微小的事物有效。',
@@ -513,7 +543,12 @@ export const nonsenseTest: TestSuite = {
       id: 'aestheticprotagonist',
       title: '审美向主角',
       subtitle: 'The Aesthetic Protagonist',
-      emoji: '🎞️',
+      emoji: {
+        layers: [
+          { id: 'Film frames', scale: 0.9 },
+          { id: 'Sparkles', scale: 0.4, x: 60, y: -20, animation: 'pulse' }
+        ]
+      },
       color: '#F9A8D4',
       description: [
         '你的生活里有一种很难描述的质感。你会感觉自己在一部电影里，并且是主角。',
@@ -527,7 +562,12 @@ export const nonsenseTest: TestSuite = {
       id: 'masterofnothing',
       title: '什么都不是的大师',
       subtitle: 'Master of Absolutely Nothing',
-      emoji: '🛋️',
+      emoji: {
+        layers: [
+          { id: 'Couch and lamp', scale: 0.9 },
+          { id: 'Cloud', scale: 0.6, x: 0, y: -45 }
+        ]
+      },
       color: '#A8A29E',
       description: [
         '经过漫长的修炼，你终于抵达了无我之境——不是哲学意义上的，而是字面意义上的：你什么都不是，并且做到了。',
@@ -542,7 +582,12 @@ export const nonsenseTest: TestSuite = {
       id: 'normalhumanbean',
       title: '正常人类',
       subtitle: 'Suspiciously Normal',
-      emoji: '🧑',
+      // emoji: '🧑',
+      emoji: {
+        layers: [
+          { id: 'Person' }
+        ]
+      },
       color: '#c9cbcf',
       description: [
         '我们的算法发现你……相当正常。这在我们的数据库里是一个罕见的结论。',
@@ -556,8 +601,13 @@ export const nonsenseTest: TestSuite = {
       id: 'pendingclassification',
       title: '分类中……',
       subtitle: 'Still Loading',
-      emoji: '⏳',
-      color: '#E2E8F0',
+      emoji: {
+        layers: [
+          { id: 'Hourglass done', scale: 0.8, animation: 'spin' },
+          { id: 'Thinking face', scale: 0.5, x: 45, y: 40, animation: 'bounce' }
+        ]
+      },
+      color: '#444444',
       description: [
         '结论：你是一个仍在加载中的人。进度条可能需要一段时间。'
       ],

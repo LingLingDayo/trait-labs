@@ -673,7 +673,12 @@ export const personalityTest: TestSuite = {
       id: 'visionary',
       title: '远见者',
       subtitle: 'The Visionary',
-      emoji: '🔭',
+      emoji: {
+        layers: [
+          { id: 'Telescope', rotate: -15 },
+          { id: 'Glowing star', scale: 0.4, x: 30, y: -25, animation: 'pulse' }
+        ]
+      },
       color: '#A78BFA',
       description: [
         '你是一个天生的思想家，脑海中永远涌动着对未来的构想。你不满足于表面的现象，习惯于深挖本质、寻找规律，并将这些洞察转化为独到的愿景。',
@@ -688,7 +693,12 @@ export const personalityTest: TestSuite = {
       id: 'commander',
       title: '指挥官',
       subtitle: 'The Commander',
-      emoji: '⚔️',
+      emoji: {
+        layers: [
+          { id: 'Crossed swords', scale: 0.9 },
+          { id: 'Crown', scale: 0.5, x: 0, y: -45 }
+        ]
+      },
       color: '#FF8DA1',
       description: [
         '你天生具备领导气质，决断力强，行动力出众。你清楚地知道自己要什么，并有能力推动周围的人朝着目标前进。',
@@ -703,7 +713,12 @@ export const personalityTest: TestSuite = {
       id: 'mediator',
       title: '调和者',
       subtitle: 'The Mediator',
-      emoji: '🕊️',
+      emoji: {
+        layers: [
+          { id: 'Dove', scale: 0.9 },
+          { id: 'Red heart', scale: 0.45, x: 25, y: 25, animation: 'pulse' }
+        ]
+      },
       color: '#B5EAD7',
       description: [
         '你有着与生俱来的共情能力，能够敏锐地感知他人的情绪，并以温柔而坚定的方式化解矛盾。在你所在的地方，人们往往能感受到一种安心与包容。',
@@ -718,7 +733,12 @@ export const personalityTest: TestSuite = {
       id: 'analyst',
       title: '分析师',
       subtitle: 'The Analyst',
-      emoji: '🔬',
+      emoji: {
+        layers: [
+          { id: 'Microscope', scale: 0.9 },
+          { id: 'Clipboard', scale: 0.45, x: 35, y: 35 }
+        ]
+      },
       color: '#A2C2E1',
       description: [
         '你是一个追求精确与逻辑的人。面对任何问题，你都会本能地收集数据、梳理逻辑、建立模型。你享受将复杂事物抽丝剥茧后的那种清晰感。',
@@ -733,7 +753,12 @@ export const personalityTest: TestSuite = {
       id: 'connector',
       title: '连接者',
       subtitle: 'The Connector',
-      emoji: '🌟',
+      emoji: {
+        layers: [
+          { id: 'Sparkles', animation: 'pulse' },
+          { id: 'Link', scale: 0.5 }
+        ]
+      },
       color: '#FFDAC1',
       description: [
         '你是人际网络的天才，走到哪里都能自然而然地与人建立联结。你的社交能量具有感染力，能够激发他人的热情与参与感。',
@@ -748,7 +773,12 @@ export const personalityTest: TestSuite = {
       id: 'guardian',
       title: '守护者',
       subtitle: 'The Guardian',
-      emoji: '🛡️',
+      emoji: {
+        layers: [
+          { id: 'Shield', scale: 0.9 },
+          { id: 'Castle', scale: 0.45, x: -30, y: 30 }
+        ]
+      },
       color: '#C7CEEA',
       description: [
         '你是可靠与稳定的象征，是那个在风雨来临时人们第一个想到的人。你对承诺极为认真，一旦答应的事就会全力以赴地完成。',
@@ -763,7 +793,12 @@ export const personalityTest: TestSuite = {
       id: 'explorer',
       title: '探险家',
       subtitle: 'The Explorer',
-      emoji: '🧭',
+      emoji: {
+        layers: [
+          { id: 'Compass', scale: 0.8, animation: 'spin' },
+          { id: 'Mountain', scale: 0.5, x: 25, y: 25 }
+        ]
+      },
       color: '#E2F0CB',
       description: [
         '你生来就是运动的，拒绝一成不变。新的地方、新的面孔、新的挑战——这些都是让你眼睛发光的事物。你用亲身实践代替理论推演，在体验中积累智慧。',
@@ -778,7 +813,12 @@ export const personalityTest: TestSuite = {
       id: 'sentinel',
       title: '哨兵',
       subtitle: 'The Sentinel',
-      emoji: '🗼',
+      emoji: {
+        layers: [
+          { id: 'Tokyo tower', scale: 0.9 },
+          { id: 'Eye', scale: 0.5, x: 0, y: -35 }
+        ]
+      },
       color: '#96B1AC',
       description: [
         '你是秩序与规则的守护者，天生对风险保持高度敏感。你能在他人注意不到的地方察觉潜在的问题，并在灾难发生前就做好预防。',
@@ -793,7 +833,12 @@ export const personalityTest: TestSuite = {
       id: 'idealist',
       title: '理想主义者',
       subtitle: 'The Idealist',
-      emoji: '✨',
+      emoji: {
+        layers: [
+          { id: 'Sparkles', animation: 'pulse' },
+          { id: 'Cloud', scale: 0.65, x: 0, y: -45 }
+        ]
+      },
       color: '#FFD1DC',
       description: [
         '你相信世界可以变得更好，也愿意为此付出真实的努力。你对意义和价值的追求贯穿于生活的每一个选择，这让你的行为常常带有一股令人动容的真诚。',
@@ -808,7 +853,12 @@ export const personalityTest: TestSuite = {
       id: 'architect',
       title: '建筑师',
       subtitle: 'The Architect',
-      emoji: '🏛️',
+      emoji: {
+        layers: [
+          { id: 'Classical building', scale: 0.9 },
+          { id: 'Straight ruler', scale: 0.5, x: 30, y: -30, rotate: 45 }
+        ]
+      },
       color: '#D0F0C0',
       description: [
         '你的世界是由逻辑、结构和系统搭建而成的。你看问题总能看到背后的框架，并本能地想要将其优化得更加精妙。你享受那种"把对的东西放在对的位置"的掌控感。',
@@ -823,7 +873,12 @@ export const personalityTest: TestSuite = {
       id: 'harmonizer',
       title: '共鸣者',
       subtitle: 'The Harmonizer',
-      emoji: '🌊',
+      emoji: {
+        layers: [
+          { id: 'Water wave' },
+          { id: 'Red heart', scale: 0.6, x: 0, y: -10, animation: 'pulse' }
+        ]
+      },
       color: '#B2E2F2',
       description: [
         '你有一种神奇的能力：走进任何一个房间，都能感受到那里情绪的流动，并自然而然地调节氛围，让所有人都感到舒适。',
@@ -838,7 +893,12 @@ export const personalityTest: TestSuite = {
       id: 'strategist',
       title: '战略家',
       subtitle: 'The Strategist',
-      emoji: '♟️',
+      emoji: {
+        layers: [
+          { id: 'Chess pawn', scale: 0.8, x: -15 },
+          { id: 'Thinking face', scale: 0.55, x: 30, y: -30 }
+        ]
+      },
       color: '#D4BBFF',
       description: [
         '你以几步之遥的眼光看待当下，总在下棋时就想好了下三步如何走。你对人性、局势和趋势有着敏锐的感知，并善于将这些洞察转化为精准的行动策略。',
@@ -853,7 +913,12 @@ export const personalityTest: TestSuite = {
       id: 'innovator',
       title: '创变者',
       subtitle: 'The Innovator',
-      emoji: '💡',
+      emoji: {
+        layers: [
+          { id: 'Light bulb', scale: 0.85, animation: 'pulse' },
+          { id: 'Rocket', scale: 0.5, x: 35, y: -30, rotate: 15 }
+        ]
+      },
       color: '#FFF176',
       description: [
         '你是打破陈规的急先锋，讨厌停滞不前。你的思维极其活跃，总能在看似毫无关联的事物之间找到连接点，并由此催生出颠覆性的绝妙点子。',
@@ -868,7 +933,12 @@ export const personalityTest: TestSuite = {
       id: 'protector',
       title: '庇护者',
       subtitle: 'The Protector',
-      emoji: '🤗',
+      emoji: {
+        layers: [
+          { id: 'Smiling face with smiling eyes', scale: 0.8 },
+          { id: 'Umbrella', scale: 0.55, x: 35, y: -40, rotate: -15 }
+        ]
+      },
       color: '#F48FB1',
       description: [
         '你有无私的一面，像一棵大树般为周围的人提供阴凉与保护。那些处于弱势或者需要帮助的人，总能在你这里找到温暖的避风港。',
@@ -883,7 +953,12 @@ export const personalityTest: TestSuite = {
       id: 'performer',
       title: '表演者',
       subtitle: 'The Performer',
-      emoji: '🎭',
+      emoji: {
+        layers: [
+          { id: 'Performing arts', scale: 0.9 },
+          { id: 'Sparkles', scale: 0.45, x: 30, y: -30, animation: 'pulse' }
+        ]
+      },
       color: '#CE93D8',
       description: [
         '哪里有你，哪里就是舞台。你拥有极强的个人魅力和舞台表现力，能够轻而易举地吸引所有人的目光，并带动整场的气氛。',
@@ -898,7 +973,12 @@ export const personalityTest: TestSuite = {
       id: 'scholar',
       title: '学者',
       subtitle: 'The Scholar',
-      emoji: '📚',
+      emoji: {
+        layers: [
+          { id: 'Books', scale: 0.9 },
+          { id: 'Graduation cap', scale: 0.55, x: 25, y: -35, rotate: 10 }
+        ]
+      },
       color: '#90CAF9',
       description: [
         '你是知识的信徒，沉静且深邃。面对未知的世界，你用探究的眼光和极大的耐心去研究底层的原理和长久的真理。',
@@ -913,7 +993,12 @@ export const personalityTest: TestSuite = {
       id: 'artisan',
       title: '手艺人',
       subtitle: 'The Artisan',
-      emoji: '🛠️',
+      emoji: {
+        layers: [
+          { id: 'Hammer and wrench', scale: 0.85 },
+          { id: 'Gear', scale: 0.5, x: 40, y: 40, animation: 'spin' }
+        ]
+      },
       color: '#BCAAA4',
       description: [
         '你信奉"少说多做"，更愿意用自己的手艺和实际产出来证明自己的价值。你沉得下心，能在重复枯燥的打磨中看到事物渐近完美的乐趣。',
@@ -928,7 +1013,12 @@ export const personalityTest: TestSuite = {
       id: 'diplomat',
       title: '外交家',
       subtitle: 'The Diplomat',
-      emoji: '🤝',
+      emoji: {
+        layers: [
+          { id: 'Handshake', scale: 0.9 },
+          { id: 'Globe showing Europe-Africa', scale: 0.5, x: 0, y: -45 }
+        ]
+      },
       color: '#80CBC4',
       description: [
         '你是天生的高级协调官，兼具亲和力和极强的社交手腕。在错综复杂的利益和人际关系网中，你总能优雅地找到双赢的平衡点。',

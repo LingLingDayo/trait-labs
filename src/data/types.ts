@@ -39,6 +39,8 @@ export interface EmojiLayer {
   rotate?: number
   /** 层级顺序 */
   zIndex?: number
+  /** 动画类型 (如 'pulse', 'float', 'spin', 'bounce') */
+  animation?: 'pulse' | 'float' | 'spin' | 'bounce' | 'shake'
 }
 
 /** 人格结论 */

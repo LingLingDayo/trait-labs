@@ -1,4 +1,4 @@
-﻿import type { TestSuite } from '../types'
+import type { TestSuite } from '../types'
 
 // ───────────────────────────────────────────────
 // 搞怪题库 —— 灵魂测试：你到底是什么怪物？
@@ -503,7 +503,12 @@ export const chaosTest: TestSuite = {
       id: 'motherlord',
       title: '妈妈',
       subtitle: 'The Mom of the Group',
-      emoji: '👩‍👧',
+      emoji: {
+        layers: [
+          { id: 'Woman', scale: 0.9 },
+          { id: 'Baby bottle', scale: 0.45, x: 80, y: 80 }
+        ]
+      },
       color: '#FFB347',
       description: [
         '恭喜你，你是群体里的妈妈。不是因为你年纪大，而是因为你总是第一个知道谁今天不对劲，第一个帮人拿外卖，第一个把局面摆平。',
@@ -520,7 +525,12 @@ export const chaosTest: TestSuite = {
       id: 'corporatemachine',
       title: '顶级牛马',
       subtitle: 'Corporate Super-engine',
-      emoji: '🐂',
+      emoji: {
+        layers: [
+          { id: 'Ox', scale: 0.85 },
+          { id: 'Necktie', scale: 0.50, x: 15, y: 0 }
+        ]
+      },
       color: '#44403C',
       description: [
         '你已经不是在工作了，你是在进行一场名为“把自己磨损成铁粉”的行为艺术。老板还没开口，你已经把方案卷到了2077年。',
@@ -537,7 +547,12 @@ export const chaosTest: TestSuite = {
       id: 'wildcard',
       title: '野生废物',
       subtitle: 'The Wild Card',
-      emoji: '🃏',
+      emoji: {
+        layers: [
+          { id: 'Joker', scale: 0.9 },
+          { id: 'Sparkles', scale: 0.5, x: 30, y: -30, animation: 'pulse' }
+        ]
+      },
       color: '#FF6B9D',
       description: [
         '你拥有一种极其高级的无序感。社交能力拉满，计划等于自杀，你是那种“我不知道我在干嘛但我玩得很爽”的混乱中立代言人。',
@@ -554,7 +569,12 @@ export const chaosTest: TestSuite = {
       id: 'performativeexhausted',
       title: '表演型累人',
       subtitle: 'The Performative Wreck',
-      emoji: '🎭',
+      emoji: {
+        layers: [
+          { id: 'Performing arts', scale: 0.9 },
+          { id: 'Pensive face', scale: 0.55, x: 30, y: 30 }
+        ]
+      },
       color: '#C084FC',
       description: [
         '外面是最活跃的那个人，里面是最疲惫的那个人。你能在所有群里镇场，但一关上门就开始反思今天说的每一句话。',
@@ -570,7 +590,12 @@ export const chaosTest: TestSuite = {
       id: 'internallycollapsing',
       title: '精神废墟',
       subtitle: 'Internal Ruins',
-      emoji: '🏚️',
+      emoji: {
+        layers: [
+          { id: 'Derelict house', scale: 0.85 },
+          { id: 'Cloud with rain', scale: 0.65, x: 0, y: -45, animation: 'float' }
+        ]
+      },
       color: '#94A3B8',
       description: [
         '你的内心是一片废墟，废墟里还住着一个对着废墟叹气的你自己。',
@@ -586,7 +611,12 @@ export const chaosTest: TestSuite = {
       id: 'quietceo',
       title: '隐形CEO',
       subtitle: 'Quiet CEO',
-      emoji: '👔',
+      emoji: {
+        layers: [
+          { id: 'Necktie', scale: 0.8 },
+          { id: 'Sunglasses', scale: 0.6, x: 0, y: -60 }
+        ]
+      },
       color: '#6366F1',
       description: [
         '你不需要社交，你只需要结果。你话不多，事做得漂亮，能量自洽，不解释不表演。',
@@ -602,7 +632,12 @@ export const chaosTest: TestSuite = {
       id: 'allrounder',
       title: '万金油好人',
       subtitle: 'The All-Rounder',
-      emoji: '🎈',
+      emoji: {
+        layers: [
+          { id: 'Balloon', scale: 0.9 },
+          { id: 'Party popper', scale: 0.55, x: 45, y: 30 }
+        ]
+      },
       color: '#F9C846',
       description: [
         '你是那种哪里都能插，哪里都不算最强，但所有人都喜欢你的那种人。',
@@ -618,7 +653,12 @@ export const chaosTest: TestSuite = {
       id: 'groupboss',
       title: '群主天花板',
       subtitle: 'Group Boss',
-      emoji: '👑',
+      emoji: {
+        layers: [
+          { id: 'Crown', scale: 0.8, x: -10, y: -20 },
+          { id: 'Loudspeaker', scale: 0.50, x: 35, y: 30 }
+        ]
+      },
       color: '#FBBF24',
       description: [
         '你不只是在群里发表情包，你是那个让这个群有灵魂的人。组局、调度、活跃气氛，你一个人包圆了。',
@@ -634,7 +674,12 @@ export const chaosTest: TestSuite = {
       id: 'talker',
       title: '嘴强王者',
       subtitle: 'King of Theoretical Life',
-      emoji: '🎤',
+      emoji: {
+        layers: [
+          { id: 'Microphone', scale: 0.85 },
+          { id: 'Mouth', scale: 0.55, x: 35, y: 30 }
+        ]
+      },
       color: '#FB923C',
       description: [
         '你是那种“能靠意念在脑内盖一座紫禁城，但现实中连个快递都懒得取”的神人。你的表达能力跑得比光速还快，导致执行力被远远甩在了另一个星系。',
@@ -650,7 +695,12 @@ export const chaosTest: TestSuite = {
       id: 'anxiousachiver',
       title: '焦虑优等生',
       subtitle: 'Anxious Achiever',
-      emoji: '📚',
+      emoji: {
+        layers: [
+          { id: 'Books', scale: 0.9 },
+          { id: 'Anxious face with sweat', scale: 0.6, x: 20, y: -35 }
+        ]
+      },
       color: '#67E8F9',
       description: [
         '你把焦虑成功外包给了生产力——意思就是你什么都做，但同时对每件事的完成情况都不太满意。',
@@ -666,7 +716,12 @@ export const chaosTest: TestSuite = {
       id: 'giftedbuttired',
       title: '有才但懒',
       subtitle: 'Gifted but Unbothered',
-      emoji: '🐢',
+      emoji: {
+        layers: [
+          { id: 'Turtle', scale: 0.9 },
+          { id: 'Light bulb', scale: 0.55, x: 5, y: -45, animation: 'pulse' }
+        ]
+      },
       color: '#4ADE80',
       description: [
         '你有天赋，你有能力，你也有社交，问题是你就是……不太想使出来。不是做不到，是觉得没必要那么拼。',
@@ -682,7 +737,12 @@ export const chaosTest: TestSuite = {
       id: 'silentprofessional',
       title: '不鸣则已型选手',
       subtitle: 'The Silent Professional',
-      emoji: '🎯',
+      emoji: {
+        layers: [
+          { id: 'Bullseye', scale: 0.8, animation: 'spin' },
+          { id: 'Shushing face', scale: 0.55, x: 30, y: 30 }
+        ]
+      },
       color: '#86EFAC',
       description: [
         '你话很少，事情说一不二。你没兴趣解释，也不需要解释，你的成果就是你的名片。',
@@ -698,7 +758,12 @@ export const chaosTest: TestSuite = {
       id: 'overloadedhero',
       title: '背负全宇宙的人',
       subtitle: 'Carrying the Universe',
-      emoji: '🌍',
+      emoji: {
+        layers: [
+          { id: 'Globe with meridians', scale: 0.8 },
+          { id: 'Backpack', scale: 0.55, x: -30, y: 30 }
+        ]
+      },
       color: '#F87171',
       description: [
         '你一边高度社交、一边极度内耗、一边整顿所有人——你是同时在三个频道用满格音量广播的存在。',
@@ -714,7 +779,12 @@ export const chaosTest: TestSuite = {
       id: 'internalperfectionist',
       title: '没人发现的完美主义者',
       subtitle: 'The Hidden Perfectionist',
-      emoji: '🔍',
+      emoji: {
+        layers: [
+        { id: 'Gem stone', scale: 0.5, x: -55, y: 45 },
+          { id: 'Magnifying glass tilted left', rotate: -15 }
+        ]
+      },
       color: '#A78BFA',
       description: [
         '你不爱社交，但你做的每一件事都要逼到极致。不达标不出手，出手就力求完美，然后没人知道你背后用了多少力气。',
@@ -730,7 +800,12 @@ export const chaosTest: TestSuite = {
       id: 'walking404',
       title: '行走的 404',
       subtitle: 'System Exception',
-      emoji: '⚠️',
+      emoji: {
+        layers: [
+          { id: 'Warning', scale: 0.8 },
+          { id: 'Alien monster', scale: 0.55, x: 35, y: 25 }
+        ]
+      },
       color: '#FCA5A5',
       description: [
         '你的存在是一个系统异常。极度内耗、几乎不出现、做事时却有两把刷子——这三件事按理说不该同时出现在一个人身上。',
@@ -746,7 +821,12 @@ export const chaosTest: TestSuite = {
       id: 'chaosking',
       title: '逗比',
       subtitle: 'The Chaos Agent',
-      emoji: '🤡',
+      emoji: {
+        layers: [
+          { id: 'Clown face', scale: 0.9 },
+          { id: 'Sparkles', scale: 0.5, x: 35, y: -35, animation: 'pulse' }
+        ]
+      },
       color: '#FCD34D',
       description: [
         '你是群里最吵最搞笑那个，但没人知道你其实非常复杂。你用笑话包裹着真实情绪，用段子掩盖着正在崩溃的自己。',
@@ -762,7 +842,12 @@ export const chaosTest: TestSuite = {
       id: 'emotionalordinary',
       title: '情绪化普通人',
       subtitle: 'Feeling Everything',
-      emoji: '🌧️',
+      emoji: {
+        layers: [
+          { id: 'Cloud with rain', scale: 0.85 },
+          { id: 'Person', scale: 0.5, x: 35, y: 45 }
+        ]
+      },
       color: '#60A5FA',
       description: [
         '你不是特别社恐，也不是真正意义上的社牛，就是个挺普通的人——但你的情绪绝对不普通。一件小事能让你高兴半天，同样一件小事也能让你低落一周。',
@@ -778,7 +863,12 @@ export const chaosTest: TestSuite = {
       id: 'invisiblenpc',
       title: '隐形 NPC',
       subtitle: 'Disposable Asset',
-      emoji: '👤',
+      emoji: {
+        layers: [
+          { id: 'Bust in silhouette', scale: 0.8 },
+          { id: 'Ghost', scale: 0.5, x: 35, y: -25 }
+        ]
+      },
       color: '#D4D4D8',
       description: [
         '你存在，但不被处理。大合照里你站着，但PS掉你之后图的构图反而会变得更好看。',
@@ -794,7 +884,12 @@ export const chaosTest: TestSuite = {
       id: 'ghostmode',
       title: '幽灵模式',
       subtitle: 'Ghost Mode',
-      emoji: '👻',
+      emoji: {
+        layers: [
+          { id: 'Ghost', scale: 0.8, animation: 'bounce'},
+          { id: 'Shushing face', scale: 0.55, x: 10, y: 25 }
+        ]
+      },
       color: '#CBD5E1',
       description: [
         '你甚至会在自己的葬礼上因为觉得“流程太长”而悄悄溜走——而且没人注意到你走了，你的存在感比Wi-Fi盲区的信号还要稀缺。',
@@ -811,7 +906,12 @@ export const chaosTest: TestSuite = {
       id: 'quietdrifter',
       title: '低调摆烂者',
       subtitle: 'Quietly Adrift',
-      emoji: '🍂',
+      emoji: {
+        layers: [
+          { id: 'Leaf fluttering in wind' },
+          { id: 'Cloud', scale: 0.6, x: 30, y: -30 }
+        ]
+      },
       color: '#A8A29E',
       description: [
         '你不喜欢人多的地方，脑子里也总有点小情绪在转，但你不会说出来，就那么悄悄托着。做事嘛，能过去就行，不喜欢强迫自己卷。',
@@ -827,7 +927,12 @@ export const chaosTest: TestSuite = {
       id: 'solowarrior',
       title: '独行刺客',
       subtitle: 'Solo Operator',
-      emoji: '⚔️',
+      emoji: {
+        layers: [
+          { id: 'Crossed swords', scale: 0.8, x: 10, y: -10, rotate: 45 },
+          { id: 'Person', scale: 0.55, x: -20, y: 30, rotate: -20 }
+        ]
+      },
       color: '#34D399',
       description: [
         '你不需要团队，你一个人可以解决90%的事情。不社交、不内耗、不废话，你把所有精力都给了做事本身。',
@@ -843,7 +948,12 @@ export const chaosTest: TestSuite = {
       id: 'overthinker',
       title: '想太多的人',
       subtitle: 'The Overthinker',
-      emoji: '🌀',
+      emoji: {
+        layers: [
+          { id: 'Cyclone', scale: 0.9, animation: 'spin' },
+          { id: 'Thinking face', scale: 0.5 }
+        ]
+      },
       color: '#93C5FD',
       description: [
         '你的脑子24小时不停机，睡着了还在转。一件小事能在你心里变成一部完整的灾难电影，并配上OST。',
@@ -859,7 +969,12 @@ export const chaosTest: TestSuite = {
       id: 'stealthdoer',
       title: '隐形实干家',
       subtitle: 'The Quiet Builder',
-      emoji: '🔧',
+      emoji: {
+        layers: [
+          { id: 'Wrench', rotate: -15 },
+          { id: 'Shushing face', scale: 0.65, x: 30, y: 30 }
+        ]
+      },
       color: '#2DD4BF',
       description: [
         '你不爱说话，心里也有些事情转来转去，但你会把这些都压下去——然后埋头把事情做完。',
@@ -875,7 +990,12 @@ export const chaosTest: TestSuite = {
       id: 'chillguy',
       title: '无害系路人',
       subtitle: 'The Chill Guy',
-      emoji: '🔋',
+      emoji: {
+        layers: [
+          { id: 'Battery', scale: 0.8, y: 25, rotate: -90 },
+          { id: 'Leaf fluttering in wind', scale: 0.65, x: 35, y: -30 }
+        ]
+      },
       color: '#86EFAC',
       description: [
         '你没什么特别大的问题，整体就是——过得去。不算最社牛，不算最废，不算最整顿，但所有场合你都能混进去。',
@@ -891,7 +1011,12 @@ export const chaosTest: TestSuite = {
       id: 'zenslacker',
       title: '佛系散人',
       subtitle: 'Zen Drifter',
-      emoji: '🍃',
+      emoji: {
+        layers: [
+          { id: 'Leaf fluttering in wind' },
+          { id: 'Person', scale: 0.55, x: 5, y: 30 }
+        ]
+      },
       color: '#A3E635',
       description: [
         '你是个心态惊人地好的人。不焦虑、不卷、不需要赢，生活里随机出现的东西你都能接住，因为你根本没有特别强的预期。',
@@ -907,7 +1032,12 @@ export const chaosTest: TestSuite = {
       id: 'chaoman',
       title: '海纳百川',
       subtitle: 'The Boundless Ocean of Love',
-      emoji: '🌊',
+      emoji: {
+        layers: [
+          { id: 'Water wave' },
+          { id: 'Red heart', scale: 0.55, x: 0, y: -45, animation: 'pulse' }
+        ]
+      },
       color: '#0EA5E9',
       description: [
         '你简直是行走的多巴胺收割机，你的“渣”已经脱离了低级趣味，进化成了一种带有毁灭感的人格艺术。',
@@ -924,7 +1054,12 @@ export const chaosTest: TestSuite = {
       id: 'mysteryperson',
       title: '谜之生命体',
       subtitle: 'Unclassified Lifeform',
-      emoji: '🔮',
+      emoji: {
+        layers: [
+          { id: 'Crystal ball', scale: 0.9 },
+          { id: 'Question mark', scale: 0.65, x: 5, y: -50 }
+        ]
+      },
       color: '#E9D5FF',
       description: [
         '我们的算法分析了你的所有答案，最终得出结论：你超出了本系统的分类范畴。',

@@ -28,7 +28,7 @@ const onClick = () => {
 }
 
 const showResult = (testId: string, result: any) => {
-  isOpen.value = false
+//   isOpen.value = false
   emit('show-result', testId, result)
 }
 </script>
