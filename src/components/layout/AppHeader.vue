@@ -16,7 +16,7 @@ onMounted(() => {
   <div 
     class="w-full relative z-50 transition-all duration-700 ease-in-out overflow-hidden"
     :class="[
-      isCollapsed && !isHovered ? 'h-2 opacity-50' : 'h-[64px] opacity-100',
+      isCollapsed && !isHovered ? 'h-0 opacity-0' : 'h-[64px] opacity-100',
     ]"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"

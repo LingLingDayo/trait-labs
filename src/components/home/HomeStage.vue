@@ -47,13 +47,13 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
 <template>
   <div class="flex-1 min-h-0 w-full flex flex-col px-6 py-10 animate-slide-up overflow-y-auto overflow-x-hidden scrollbar-hide safe-area-bottom">
     <!-- Main Content Area -->
-    <div class="flex-1 flex flex-col items-center justify-center space-y-8 py-2">
+    <div class="flex-1 flex flex-col items-center justify-center space-y-8 py-2 md:gap-8">
       
       <!-- Top Section: Logo/Hero + Title side by side -->
-      <div class="w-full max-w-[380px] flex items-center gap-6">
+      <div class="w-full flex items-center gap-6 md:gap-16 justify-center">
         <!-- 英雄图容器：缩小并移动到侧边，增加持续摆动动画 -->
         <div 
-          class="relative flex-shrink-0 w-32 h-32 rounded-3xl overflow-hidden shadow-premium transition-colors duration-700 animate-sway-float"
+          class="relative flex-shrink-0 w-32 h-32 md:w-48 md:h-48 rounded-3xl overflow-hidden shadow-premium transition-colors duration-700 animate-sway-float"
           :class="typeThemes[activeTestType.id] || 'bg-white'"
         >
           <img 
@@ -63,12 +63,12 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
           />
         </div>
 
-        <!-- Title Section: 使用 flex-1 稳固空间，防止内容切换导致整体宽度波动抖动喵~ -->
-        <div class="flex-1 min-w-0 flex flex-col justify-center">
+        <!-- Title Section: 使用 flex-1 稳固空间，防止内容切换导致整体宽度波动抖动 -->
+        <div class="flex-1 md:flex-none md:w-[330px] min-w-0 flex flex-col justify-center">
           <Transition name="fade-slide" mode="out-in">
             <h1 
               :key="activeTestType.id"
-              class="text-3xl font-black text-slate-900 leading-tight text-left"
+              class="text-3xl md:text-4xl font-black text-slate-900 leading-tight text-left md:flex md:flex-col md:gap-4"
               v-html="activeTestType.tagline"
             >
             </h1>
@@ -77,9 +77,9 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
       </div>
 
       <!-- Description Area -->
-      <div class="w-full max-w-[380px]">
+      <div class="w-full md:text-center">
         <Transition name="fade-slide" mode="out-in">
-          <p :key="activeTestType.id" class="flex flex-col justify-center text-slate-500 text-base leading-relaxed text-left opacity-80 pl-1 min-h-[4.875rem]">
+          <p :key="activeTestType.id" class="flex flex-col justify-center text-slate-500 text-base md:text-lg leading-relaxed text-left md:text-center opacity-80 pl-1 min-h-[4.875rem]">
             {{ activeTestType.description }}
           </p>
         </Transition>
@@ -87,16 +87,16 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
 
       <!-- Test Types Selector: Keep centered -->
       <div class="w-full flex flex-col items-center space-y-2">
-        <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">选择你的探索方向</span>
+        <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-slate-400 font-bold">选择你的探索方向</span>
         <div 
           ref="scrollContainer"
-          class="flex gap-2 w-full max-w-[340px] overflow-x-auto py-5 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
+          class="flex gap-2 w-full max-w-[500px] overflow-x-auto py-5 px-4 scrollbar-hide scroll-smooth mask-fade-horizontal"
         >
           <button 
             v-for="item in testTypes" 
             :key="item.id"
             @click="selectType($event, item)"
-            class="flex-shrink-0 px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 whitespace-nowrap"
+            class="flex-shrink-0 px-5 py-2 md:px-6 rounded-full text-xs md:text-sm font-bold transition-all duration-300 whitespace-nowrap"
             :class="activeTestType.id === item.id ? 'bg-primary-500 text-white shadow-lg scale-105' : 'bg-white/60 text-slate-400 hover:bg-white hover:text-slate-600 shadow-sm'"
           >
             {{ item.name }}
@@ -105,7 +105,7 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
       </div>
 
       <!-- Action Button -->
-      <div class="w-full max-w-[320px] pt-2">
+      <div class="w-full max-w-[400px] pt-2">
         <Button size="xl" class="w-full shadow-premium-hover" @click="$emit('start', activeTestType.id)">
           立即开启探索
         </Button>
