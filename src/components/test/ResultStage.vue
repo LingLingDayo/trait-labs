@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useTestStore } from '../../stores/testStore'
 import { calculateRarities } from '../../utils/calculator'
 import Card from '../common/Card.vue'
+import MixedEmoji from '../MixedEmoji.vue'
 
 const emit = defineEmits(['restart'])
 const store = useTestStore()
@@ -99,10 +100,15 @@ const onRestart = () => {
         />
         <div 
           v-else
-          class="text-7xl w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+          class="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 p-4"
           :style="{ backgroundColor: result.color + '10', color: result.color }"
         >
-          {{ result.emoji }}
+          <template v-if="typeof result.emoji === 'string'">
+            <span class="text-7xl">{{ result.emoji }}</span>
+          </template>
+          <template v-else>
+            <MixedEmoji :layers="result.emoji.layers" size="100%" />
+          </template>
         </div>
       </div>
 

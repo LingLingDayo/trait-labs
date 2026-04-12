@@ -25,6 +25,22 @@ export interface Question {
   dimension?: string
 }
 
+/** 混合 Emoji 的单个图层定义 */
+export interface EmojiLayer {
+  /** Fluent UI Emoji 的文件夹名 (如 'Melting face') */
+  id: string
+  /** 缩放比例 (0 ~ 1) */
+  scale?: number
+  /** 水平偏移百分比 (-100 ~ 100) */
+  x?: number
+  /** 垂直偏移百分比 (-100 ~ 100) */
+  y?: number
+  /** 旋转角度 (0 ~ 360) */
+  rotate?: number
+  /** 层级顺序 */
+  zIndex?: number
+}
+
 /** 人格结论 */
 export interface PersonalityResult {
   /** 结论唯一标识 (如 INTJ / wolf / architect) */
@@ -35,8 +51,8 @@ export interface PersonalityResult {
   subtitle: string
   /** 详细描述 (多段落) */
   description: string[]
-  /** 代表 emoji */
-  emoji: string
+  /** 代表 emoji (支持单个字符或复合图层) */
+  emoji: string | { layers: (string | EmojiLayer)[] }
   /** 结果配图 (可选), 若无则显示 emoji */
   image?: string
   /** 主色调 (用于 UI 渲染) */
