@@ -378,7 +378,13 @@ export const nonsenseTest: TestSuite = {
       id: 'mentalgibberish',
       title: '精神乱码',
       subtitle: 'Error 404 Soul Not Found',
-      emoji: '👾',
+      emoji: {
+        layers: [
+          { id: 'Melting face' },
+          { id: 'Alien monster', scale: 0.5, x: 50, y: 40, rotate: 15 },
+          { id: 'Glowing star', scale: 0.3, x: 10, y: 10 }
+        ]
+      },
       color: '#10B981',
       description: [
         '你的思维方式像极了一长串乱码，没人能解析，包括你自己。你仿佛是造物主在键盘上睡着了不小心敲出来的产物。',
@@ -441,7 +447,12 @@ export const nonsenseTest: TestSuite = {
       id: 'schrodingeremployee',
       title: '薛定谔的打工人',
       subtitle: 'Superposition of Slacking',
-      emoji: '📦',
+      emoji: {
+        layers: [
+          { id: 'Package' },
+          { id: 'Cat face', scale: 0.5, x: 25, y: -15, rotate: -5 }
+        ]
+      },
       color: '#8B5CF6',
       description: [
         '你同时处于「在努力」和「在摸鱼」的量子叠加态。只有当别人来查看你的进度时，你才会坍缩成其中一种状态。',
