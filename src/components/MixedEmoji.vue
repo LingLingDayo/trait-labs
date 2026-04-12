@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { Icon } from '@iconify/vue';
 import type { EmojiLayer } from '../data/types';
 
 const props = defineProps<{
@@ -17,14 +18,10 @@ const normalizedLayers = computed(() => {
   });
 });
 
-const getEmojiUrl = (id: string) => {
-  // 按照 Fluent UI Emoji 的规则生成路径
-  // 文件夹名需要精确匹配，文件名则是小写下划线形式
-  const folderName = id;
-  const fileName = folderName.toLowerCase().replace(/ /g, '_') + '_flat.svg';
-  const encodedFolder = encodeURIComponent(folderName);
-  
-  return `https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/${encodedFolder}/Flat/${fileName}`;
+const getIconName = (id: string) => {
+  // 将 'Melting face' 转换为 'fluent-emoji-flat:melting-face'
+  const slug = id.toLowerCase().replace(/ /g, '-');
+  return `fluent-emoji-flat:${slug}`;
 };
 
 const containerStyle = computed(() => ({
@@ -48,10 +45,9 @@ const containerStyle = computed(() => ({
         transform: `rotate(${layer.rotate ?? 0}deg)`,
       }"
     >
-      <img 
-        :src="getEmojiUrl(layer.id)" 
-        :alt="layer.id"
-        class="w-full h-full object-contain pointer-events-none drop-shadow-sm"
+      <Icon 
+        :icon="getIconName(layer.id)" 
+        class="w-full h-full drop-shadow-sm"
       />
     </div>
   </div>
