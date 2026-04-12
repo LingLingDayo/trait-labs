@@ -1,66 +1,64 @@
-# Trait Labs (特质实验室)
+# 🧪 Trait Labs (特质实验室)
 
-Trait Labs 是一个基于 Vue 3 + Vite + TypeScript 构建的高性能、交互式趣味测评平台。通过多维度的算法模型，为用户提供关于性格、兴趣及各种“奇怪”属性的深度剖析。
+这里是一个让你更了解自己（或者发现自己居然这么奇怪）的测试基地！我们在这里准备了各种脑洞大开的测试。
 
-## 🌟 核心特性
+## 💡 功能点
 
-- **多维度测试体系**：内置性格测试、二次元浓度鉴定、混沌程度分析等多种趣味测评。
-- **动态稀有度系统**：基于算法生成的动态评价与稀有度标签，让每一次结果都与众不同。
-- **极致视觉体验**：采用 Vanilla CSS 打造的流体交互设计，支持平滑的过渡动画与响应式布局。
-- **精简架构**：基于 Vite 的极速开发体验，接近零延迟的单页应用交互。
+- **趣味小测试**：
+  - **人格测评**：基于大五人格模型的自我剖析。
+  - **灵魂测试**：看看你到底是哪种“灵魂怪物”。
+  - **??测试**：不着边际的思维漂流与胡言乱语。
+  - **二次元浓度鉴定**：测测你的二次元纯度。
+- **动态结果页**：
+  - **动态 Emoji 层**：采用 Fluent UI 风格，配上特制的层级动画（缩放、浮动、晃动等），每个结果都独一无二。
+  - **动态稀有度**：看看你的特质在所有人中有多稀有，说不定你就是那个万亿分之一的“天选之人”！
+  - **雷达图直观分析**：用数据化的方式让你看清自己的各项属性分布。
+- **极致丝滑的体验**：不管你是用手机还是电脑，布局都完美适配，动画流畅得像抹了黄油！
 
 ## 🛠 技术栈
 
-- **框架**: [Vue 3](https://vuejs.org/) (Composition API)
-- **构建工具**: [Vite](https://vitejs.dev/)
-- **语言**: [TypeScript](https://www.typescriptlang.org/)
-- **样式**: Vanilla CSS / [Tailwind CSS](https://tailwindcss.com/)
-- **类型检查**: vue-tsc / ESLint
+- **前端**：Vue 3 (Composition API)
+- **构建**：Vite
+- **语言**：TypeScript
+- **样式**：Vanilla CSS + Tailwind CSS
+- **状态**：Pinia
 
-## 🚀 快速开始
+## 🚀 运行项目
 
-### 1. 克隆与安装
-
-```bash
-# 克隆仓库
-git clone https://github.com/LingLingDayo/trait-labs.git
-
-# 进入目录
-cd trait-labs
-
-# 安装依赖
-npm install
-```
-
-### 2. 开发环境运行
-
-```bash
-npm run dev
-```
-
-### 3. 生成环境构建
-
-```bash
-npm run build
-```
+1. **克隆项目**：
+   ```bash
+   git clone https://github.com/LingLingDayo/trait-labs.git
+   ```
+2. **安装依赖**：
+   ```bash
+   npm install
+   ```
+3. **开发测试**：
+   ```bash
+   npm run dev
+   ```
+4. **构建项目**：
+   ```bash
+   npm run build
+   ```
 
 ## 📂 项目结构
 
 ```text
 src/
-├── assets/             # 静态资源（图片、字体等）
-├── components/         # 通用业务组件
-├── data/               # 核心测评数据配置文件 (Test Definitions)
-├── layouts/            # 页面布局容器
-├── services/           # 核心逻辑与算法 (Calculator, Utils)
-├── types/              # TypeScript 全局类型定义
-└── views/              # 页面级组件 (Home, Test, Result)
+├── assets/          # 静态资源（图片等）
+├── components/      # 组件库
+│   ├── common/      # 通用基础组件
+│   ├── home/        # 首页模块
+│   ├── layout/      # 布局组件
+│   ├── test/        # 测试流程（题目、进度、结果）
+│   └── MixedEmoji.vue # 核心动态 Emoji 混合组件
+├── data/            # 数据层
+│   └── tests/       # 所有的测试题库数据
+├── stores/          # 状态管理 (Pinia)
+└── utils/           # 工具函数（评分算法等）
 ```
-
-## 🧪 测评算法说明
-
-项目的测评逻辑主要由 `src/services/calculator.ts` 驱动，结果匹配基于分数区间映射与标签权重计算。每个测评文件的 `matchRules` 定义了分值范围与最终结论的对应关系。
 
 ---
 
-© 2026 Trait Labs - 记录你的每一份独特特质。
+© 2026 Trait Labs. 记录你的每一份独特特质。
