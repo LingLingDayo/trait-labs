@@ -48,7 +48,12 @@ export const debugTest: TestSuite = {
       title: '调试大师',
       subtitle: 'Debug Master',
     //   image: 'visionary.png',
-      emoji: '🧙‍♂️',
+      emoji: {
+        layers: [
+          { id: 'Sparkles', animation: 'pulse' },
+          { id: 'Laptop', scale: 0.6, x: 0, y: 30 }
+        ]
+      },
       color: '#88D8C0',
       description: [
         '恭喜你！你展现出了极佳的开发者特质。',
@@ -63,7 +68,12 @@ export const debugTest: TestSuite = {
       id: 'debug_learner',
       title: '调试学者',
       subtitle: 'Debug Learner',
-      emoji: '🐢',
+      emoji: {
+        layers: [
+          { id: 'Turtle', scale: 0.9 },
+          { id: 'Magnifying glass tilted left', scale: 0.55, x: 30, y: 30, rotate: -15 }
+        ]
+      },
       color: '#A78BFA',
       description: [
         '看起来系统逻辑已经跑通了，虽然你的得分没到最高，但这就是测试的意义所在。',

@@ -361,7 +361,12 @@ export const otakuTest: TestSuite = {
         '无论是古训名言，还是缝隙里的声优梗、党争伦理结，都能触发你DNA里深不可测的刻板回应。',
         '在这个圈子里，你已经脱离了“观众”的范畴，你是这个亚文化生态系统中的中流砥柱。'
       ],
-      emoji: '🤓',
+      emoji: {
+        layers: [
+          { id: 'Nerd face', scale: 0.9 },
+          { id: 'Film frames', scale: 0.6, x: 40, y: 35 }
+        ]
+      },
       color: '#8b5cf6',
       strengths: ['亚文化活化石', '万物皆可萌', '极意玩梗大师'],
       growthTips: ['多出去呼吸一下三次元的空气', '试着对圈外的朋友宽容一些，不要轻易发动替身攻击'],
@@ -377,7 +382,12 @@ export const otakuTest: TestSuite = {
         '对满屏幕的“2.5条悟”、“鹿乃子”或短视频烂梗可能不屑一顾，但只要提到“钉宫”、“大哥哥”或“白学”，你的眼神立刻变得锐利。',
         '时代轰轰烈烈地向前，而经典在你的记忆圣殿中被奉为了永恒。'
       ],
-      emoji: '📜',
+      emoji: {
+        layers: [
+          { id: 'Scroll', rotate: -10 },
+          { id: 'Hourglass done', scale: 0.45, x: 25, y: 25, animation: 'spin' }
+        ]
+      },
       color: '#d97706',
       strengths: ['情怀拉满', '品味老辣且独到', '如数家珍的百科全书'],
       growthTips: ['不要因为画风就拒绝新时代的好作品', '可以适当了解一下现在的推子们都在玩什么'],
@@ -393,7 +403,12 @@ export const otakuTest: TestSuite = {
         '可能你并没有耐心去补完动辄上百集的上古神作，但只要某部动画在B站或抖音刷屏，你绝对能在第一时间掌握核心话术体系。',
         '比起沉浸式看番，你更享受在这场互联网的高强度狂欢里与大伙一起整活、迫害角色。'
       ],
-      emoji: '🌊',
+      emoji: {
+        layers: [
+          { id: 'Water wave' },
+          { id: 'Laptop', scale: 0.5, x: -30, y: -25 }
+        ]
+      },
       color: '#06b6d4',
       strengths: ['极速吸梗体质', '抽象段子手', '超强版本适应力'],
       growthTips: ['小心电子赛博迷失症', '试着放下倍速，一秒不差地看完一部好动画吧'],
@@ -409,7 +424,12 @@ export const otakuTest: TestSuite = {
         '面对题库里那些奇奇怪怪的“接头暗号”、“发病语录”，你的内心毫无波澜，甚至只觉得莫名其妙。',
         '你有着极为健康且贴近现实的三观，对于所谓的二次元文化，仅仅是“偶尔听说过”、“路过看个乐子”的纯纯路人。'
       ],
-      emoji: '🏕️',
+      emoji: {
+        layers: [
+          { id: 'Camping', scale: 0.9 },
+          { id: 'Sun with face', scale: 0.4, x: -15, y: -80, animation: 'pulse' }
+        ]
+      },
       color: '#10b981',
       strengths: ['身心异常健康', '完美融入现实社会', '情绪管理大师'],
       growthTips: ['其实某些时候发发神经也挺减压的', '无聊时找部口碑神作试着入坑吧，也许会发现新世界'],
@@ -425,7 +445,12 @@ export const otakuTest: TestSuite = {
         '似乎什么都懂一点点，但又不至于深陷泥潭；看过文艺复兴的老番，也刷过最新的鬼畜烂梗短视频，闲暇时甚至还能回归现充去喝杯咖啡。',
         '你能与二次元宅宅谈天说地，也能与圈外好友毫无障碍地社交，堪称次元壁反复横跳的终极缝合怪。'
       ],
-      emoji: '🎭',
+      emoji: {
+        layers: [
+          { id: 'Performing arts', scale: 0.9 },
+          { id: 'Thinking face', scale: 0.5, x: -30, y: 35 }
+        ]
+      },
       color: '#ef4444',
       strengths: ['四海之内皆为同好', '绝不钻牛角尖', '随波逐流的社交达人'],
       growthTips: ['偶尔试着全心投入某一部作品，找到真正的热爱点'],
