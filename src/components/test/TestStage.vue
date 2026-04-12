@@ -92,7 +92,7 @@ const handleConfirmExit = () => {
 
 <template>
   <!-- 外层容器设为 100dvh 并锁定 hidden，禁止全局滚动 -->
-  <div class="fixed inset-0 h-[100svh] flex flex-col bg-slate-50 max-w-[480px] mx-auto overflow-hidden animate-slide-up">
+  <div class="w-full h-[100svh] flex-1 flex flex-col bg-slate-50 md:bg-transparent overflow-hidden animate-slide-up relative">
     <!-- 顶部栏：返回按钮和进度条 -->
     <div class="px-6 pt-6 pb-2 flex items-center gap-4">
       <button 
@@ -115,16 +115,16 @@ const handleConfirmExit = () => {
           class="flex-1 flex flex-col"
         >
           <!-- 中间题目内容区：flex-1 并允许内部滚动以防长文本，居中展示 -->
-          <div class="flex-1 flex flex-col justify-center px-6 overflow-y-auto scrollbar-hide">
+          <div class="flex-1 flex flex-col justify-center px-6 md:px-12 overflow-y-auto scrollbar-hide">
             <div class="py-4">
-              <h2 class="text-2xl font-bold text-slate-800 leading-tight break-words">
+              <h2 class="text-2xl md:text-3xl font-bold text-slate-800 leading-tight break-words md:text-center">
                 {{ store.currentQuestion.text }}
               </h2>
             </div>
           </div>
 
           <!-- 底部选项区：随题目一起切换 -->
-          <div class="w-full bg-transparent px-6 pt-4 pb-6 space-y-3">
+          <div class="w-full bg-transparent px-6 md:px-12 pt-4 pb-6 space-y-3 max-w-[800px] mx-auto">
             <Card 
               v-for="option in displayOptions" 
               :key="option.id"
@@ -165,7 +165,7 @@ const handleConfirmExit = () => {
     </div>
 
     <!-- 底部导航切换功能：移出 Transition，保持静态 -->
-    <div v-if="!store.isFinished && store.currentQuestion" class="w-full bg-transparent px-6 pt-0 pb-6 safe-area-bottom">
+    <div v-if="!store.isFinished && store.currentQuestion" class="w-full bg-transparent px-6 md:px-12 pt-0 pb-6 safe-area-bottom max-w-[800px] mx-auto">
       <div class="flex items-center justify-between gap-4">
         <button 
           class="flex-1 py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30 disabled:grayscale"

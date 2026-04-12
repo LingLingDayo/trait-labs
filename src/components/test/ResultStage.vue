@@ -41,7 +41,7 @@ const rarityPercentage = computed(() => {
 
 // 动态稀有度文案
 const displayRarityLabel = computed(() => {
-  if (result.value?.rarityLabel) return `${result.value.rarityLabel}<br>全球仅有 ${rarityPercentage.value}% 的人是${result.value?.title}`
+  if (result.value?.rarityLabel) return `${result.value.rarityLabel}<br class="md:hidden"><span class="hidden md:inline"> </span>全球仅有 ${rarityPercentage.value}% 的人是${result.value?.title}`
   
   const p = parseFloat(rarityPercentage.value)
   const idHash = result.value?.id ? result.value.id.length : 0
@@ -74,7 +74,7 @@ const onRestart = () => {
 </script>
 
 <template>
-  <div class="w-full h-full overflow-y-auto px-6 py-8 space-y-6 animate-slide-up bg-transparent relative scrollbar-hide">
+  <div class="w-full h-full overflow-y-auto px-6 md:px-12 py-8 space-y-8 animate-slide-up bg-transparent relative scrollbar-hide max-w-[900px] mx-auto">
     <!-- 顶部操作栏 -->
     <div class="flex items-center">
       <button 
@@ -113,7 +113,7 @@ const onRestart = () => {
       </div>
 
       <div>
-        <h1 class="text-3xl font-extrabold" :style="{ color: result.color }">{{ result.title }}</h1>
+        <h1 class="text-3xl md:text-5xl font-extrabold" :style="{ color: result.color }">{{ result.title }}</h1>
         <p class="text-slate-500 font-medium mt-1">{{ result.subtitle }}</p>
         
         <!-- 稀有度标签 -->
@@ -133,8 +133,8 @@ const onRestart = () => {
     <!-- 结果描述 -->
     <Card padding="p-6" class="space-y-4">
       <h3 class="text-lg font-bold text-slate-800">人格解析</h3>
-      <div class="space-y-2 text-slate-600 text-sm leading-relaxed">
-        <p v-for="(desc, idx) in result?.description" :key="idx" class="break-words">{{ desc }}</p>
+      <div class="space-y-2 text-slate-600 text-sm md:text-base leading-relaxed">
+        <p v-for="(desc, idx) in result?.description" :key="idx" class="break-words md:text-center">{{ desc }}</p>
       </div>
     </Card>
 
@@ -198,7 +198,7 @@ const onRestart = () => {
     <!-- 底部按钮 -->
     <div class="pt-4 pb-8 flex flex-col items-center space-y-8 safe-area-bottom">
       <button 
-        class="w-full py-4 px-6 rounded-2xl text-white font-bold text-lg shadow-xl active:scale-95 transition-all"
+        class="w-full max-w-md py-4 px-6 rounded-2xl text-white font-bold text-lg shadow-xl active:scale-95 transition-all"
         :style="{ backgroundColor: result?.color || '#A78BFA', boxShadow: `0 10px 25px -5px ${result?.color || '#A78BFA'}40` }"
         @click="onRestart"
       >
