@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "dev": "node scripts/clean-utools.js && vite",
+    "dev:utools": "node scripts/copy-utools.js && vite",
+    "build": "node scripts/clean-utools.js && vue-tsc -b && vite build",
+    "build:utools": "npm run build && node scripts/copy-utools.js",
     "preview": "vite preview"
   },
   "dependencies": {
