@@ -8,6 +8,7 @@ import ResultStage from './components/test/ResultStage.vue'
 import DevTools from './components/dev/DevTools.vue'
 import type { PersonalityResult } from './data/types'
 import { useTestStore } from './stores/testStore'
+import { isUtools } from './utils/env'
 
 const isStarted = ref(false)
 const isCompleted = ref(false)
@@ -48,7 +49,7 @@ const onShowResult = (testId: string, result: PersonalityResult) => {
     
     <!-- Main Content wrapper (Responsive Max-width) -->
     <div class="w-full max-w-[1024px] h-full flex flex-col relative">
-      <AppHeader />
+      <AppHeader v-if="!isUtools()" />
 
       <main class="flex-1 w-full flex flex-col overflow-hidden">
         <HomeStage v-if="!isStarted" @start="startTest" />
