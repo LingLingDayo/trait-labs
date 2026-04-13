@@ -7,7 +7,7 @@
     "dev": "node scripts/clean-utools.js && vite",
     "dev:utools": "node scripts/copy-utools.js && vite",
     "build": "node scripts/clean-utools.js && vue-tsc -b && vite build",
-    "build:utools": "npm run build && node scripts/copy-utools.js",
+    "build:utools": "vue-tsc -b && vite build && node scripts/copy-utools.js",
     "preview": "vite preview"
   },
   "dependencies": {
