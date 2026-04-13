@@ -8,7 +8,7 @@
   "features": [
     {
       "code": "trait_labs",
-      "explain": "人格测评",
+      "explain": "人格测试",
       "cmds": ["人格测评", "人格测试", "MBTI", "MBTI测试", "SBTI"]
     }
   ]
