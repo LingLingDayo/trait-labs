@@ -1,0 +1,15 @@
+{
+  "main": "index.html",
+  "preload": "preload/services.js",
+  "logo": "logo.png",
+  "development": {
+    "main": "http://localhost:5173"
+  },
+  "features": [
+    {
+      "code": "trait_labs",
+      "explain": "人格测评",
+      "cmds": ["人格测评", "人格测试", "MBTI", "MBTI测试", "SBTI"]
+    }
+  ]
+}
