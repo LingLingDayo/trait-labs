@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import Button from '../common/Button.vue'
 import { TEST_REGISTRY } from '../../data'
+import { isUtools } from '../../utils/env'
 
 defineEmits(['start'])
 
@@ -45,9 +46,15 @@ const selectType = (event: MouseEvent, item: typeof testTypes[0]) => {
 </script>
 
 <template>
-  <div class="flex-1 min-h-0 w-full flex flex-col px-6 py-10 animate-slide-up overflow-y-auto overflow-x-hidden scrollbar-hide safe-area-bottom">
+  <div 
+    class="flex-1 min-h-0 w-full flex flex-col animate-slide-up overflow-y-auto overflow-x-hidden scrollbar-hide safe-area-bottom"
+    :class="isUtools() ? 'px-6 py-0' : 'px-6 py-10'"
+  >
     <!-- Main Content Area -->
-    <div class="flex-1 flex flex-col items-center justify-center space-y-8 py-2 md:gap-8">
+    <div 
+      class="flex-1 flex flex-col items-center justify-center space-y-8 py-2"
+      :class="isUtools() ? '' : ' md:gap-8'"
+    >
       
       <!-- Top Section: Logo/Hero + Title side by side -->
       <div class="w-full flex items-center gap-6 md:gap-16 justify-center">
